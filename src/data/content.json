@@ -1,0 +1,215 @@
+{
+    "0": {
+        "title":"Down the Rabbit-Hole",
+        "content": "“You’re late! Wake up!” \nAlice wakes with a start and sits up, blinking in surprise and looking about her in bewilderment. It is a balmy summer’s afternoon and she is sitting beside a river, the long grass that has formed her bed dotted with daisies. The waters gurgle softly as they pass by on their way downstream.\nSomething about the scene seems very familiar.\n“Don’t just sit there! Get up! You’re late!” comes the shrill voice again.\nThe hot weather making her feel sleepy and dull-witted, Alice follows the sound to its source. There, standing in the shade of a chestnut tree, is a white rabbit.\nBut this isn’t just any white rabbit. This particular rabbit is dressed in the manner of an English gentleman – jacket, waistcoat and all. The rabbit’s ears are a little threadbare, the stuffing poking out through holes worn in the skin, and as it tilts its head to one side to observe her with its glassy pink eyes, Alice thinks she hears a grating of gears.\nAlice jumps to her feet as it flashes through her mind that, once upon a time, on some previous occasion, she saw something like this rabbit wearing a waistcoat and carrying a pocket-watch. But there is no timepiece clutched in the rabbit’s paws this time.\n“Who are you to say I’m late when you are not even carrying a pocket-watch?” Alice asks, not one to be outdone by an animal that looks like nothing more than a taxidermist’s test subject.\nThe rabbit says nothing, but simply unbuttons its waistcoat, and Alice gasps as her former cockiness is consumed by gut-wrenching terror. Where the rabbit’s stomach should be, a huge watch ticks – a clock large enough to fill the cavity from ribcage to pelvis – raw and ragged scrags of meat poking between the wire stitches that bind watch and rabbit together.\n“How can I be late,” Alice asks the rabbit, “when I don’t even know what it is I’m late for?”\nShe is suddenly aware of the wind having picked up, as scuds of cloud race each other across the sky, a sky which has changed from sapphire blue to a seething, bloody claret.\n“You are needed in Wonderland,” the White Rabbit informs her, the twitching of its nose accompanied by a mechanical whirring sound.\n“Wonderland?” There is something familiar about that name, Alice is sure of it, but she can’t quite put her finger on what it is.\n“It’s the Queen of Hearts. The whole realm has suffered the ravages of her tyrannical reign, and if you thought things were bad before, they are considerably worse now. It’s a miracle I managed to escape her Tick-Tock Men.”\n“Before?” Alice whispers in a daze. “Tick-Tock Men?”\n“Yes, Tick-Tock Men! How else do you think I ended up like this?” the rabbit says, looking down at his stomach and the ticking timepiece embedded within what little flesh remains there.\nAlice stares at the creature in dumbfounded amazement before finally finding her voice again. “Why are you telling me this? What do you expect me to do about it?”\n“Why?” gasps the rabbit, in incredulity. “We need you, Alice. Wonderland needs you.”\n“But what do you need me to do?”\n“We need you to kill the Queen, of course.”\n“Kill the Queen?” Alice echoes. “But why me?”\nThe White Rabbit gives an exasperated sigh and takes a deep breath, in an attempt to compose itself, before speaking again.\n“Because it’s your nightmare!”\n",
+        "options": [
+            [1]
+        ]
+    },
+    "1": {
+        "content": "Alice stares at the rabbit unsure what to say, a dozen questions crowding her mind. Who is the Queen of Hearts? Who turned the White Rabbit into a walking timepiece? And how does he expect her to kill anyone? After all, she’s only eleven years-old. But before she can give voice to even one of the questions, the White Rabbit speaks again.\n “Come on, there’s not a moment to lose. The clock is ticking!” he says, looks pointedly at his clock-filled stomach cavity. And with that, he turns tail and scampers off across the meadow, through the long, wind-tugged grass.\n",
+        "options": [
+            [20, "Alice should set off in pursuit"],
+            [39, "Following half-clockwork talking rabbits could never be considered wise"]
+        ]
+    },
+    "5": {
+        "content": "Alice can tell from the way they move that the Tick-Tock Men mean her harm and so the best thing to do would be to try to escape their clockwork clutches. Picking up the skirts of her dress, she sprints towards them and then at the last possible moment feints right before throwing herself left.",
+        "options": [
+            [25],
+            [42]
+        ],
+        "test": "agility"
+    },
+     "12" : {
+        "content": "As the dresser disappears again above her, Alice reaches a section of the well shaft adorned with framed maps and pictures hanging from hooks.",
+        "options": [
+            [33, "Alice should set off in pursuit"],
+            [82, "Don't do anything"]
+        ]
+    },
+     "20" : {
+        "content": "Burning with curiosity, Alice runs off across the field after the rabbit. Just as she is starting to feel that she might actually be catching up with it, the creature disappears down a large rabbit-hole under a hedge.\n Stumbling to a halt, Alice peers down into the earthy darkness. This is all looking very familiar, but she can’t quite remember why.\n If she pulls away some of the turf from around the entrance, she should be able to squeeze inside the burrow, but such activity will doubtless make a mess of her dress, and what would Nurse say? At her back, the wind continues to rise.",
+        "options": [
+            [57, "Alice should follow the White Rabbit underground"],
+            [64, "Crawling down rabbit-holes is not behaviour befitting a young lady"]
+        ]
+    },
+     "25" : {
+        "content": "Her plan works. The Tick-Tock Men reach for where they think she is going to be, only to grab hold of thin air with their metal claws when she slides past the other way.\n The Tick-Tock Men immediately turn around and start to come after her again. Alice has to find a way out of the hall and fast!\n Running to one of the doors she tries it, only to find that it is locked. So is the next. And the next.",
+        "options": [
+            [296, "Alice should keep trying the doors"],
+            [169, "Alice should turn and prepare to face the sinister guardians of this place"]
+        ]
+    },
+     "33" : {
+        "content": "Reaching out with both hands, Alice plucks the nearest picture from the wall.",
+        "options": [
+            [53],
+            [7]
+        ],
+        "test": "die"
+    },
+     "39" : {
+        "content": "“Talking rabbits,” Alice says to herself. “Whatever next – frog footmen?”\n She turns and starts to walk away from the riverbank towards the path that she decides she must have followed to get here in the first place, even though she doesn’t remember doing so. But the rising wind has now become a gale, tugging at Alice’s hair and clothes, whipping her hair about her face, and the child fancies she can hear the rumble of thunder far off beyond the horizon.",
+        "options": [
+            [20, "Alice should chase after the rabbit after all"],
+            [64, "Alice shouldn't chase the rabbitt"]
+        ]
+    },
+     "42" : {
+        "content": "Alice is fast, but the clockwork-driven Tick-Tock Men are faster. As Alice ducks left, one of them strikes her with the metal claws of an outstretched hand, sending her tumbling to the ground and opening three long scratches across her right arm.",
+        "options": [
+            [289]
+        ],
+        "event": [{
+            "name": "endurance",
+            "change": -2
+        }]
+    },
+     "53" : {
+        "content": "Still dropping like a stone down the well shaft, the petticoats of her dress ballooning about her like a parachute, Alice looks at the picture she managed to grab. Only it isn’t a picture, it’s a map.\n The map is of an island. It shows a swamp, and beyond that a path that branches left and right before a large, gnarled tree in the middle of a forest. The right-hand path leads to craggy uplands, while the left-hand path passes a cave. Both paths eventually lead to a white stone keep that reminds Alice of a Rook chess piece.\n As Alice continues to fall, the wind whips the map out of her hands again.",
+        "options": [
+            [82]
+        ]
+    },
+     "57" : {
+        "content": "Squeezing along the tunnel, Alice drags herself through the loamy dark, unable to see more than a foot in front of her face. There is no sign of the White Rabbit now.\n The further Alice wriggles along the tunnel, between probing roots and writhing worms, dangling from the roof of the burrow, the more opaque the gloom becomes.\n Without any warning the tunnel dips suddenly downwards, so suddenly, in fact, that Alice doesn’t have a moment to think about stopping herself before she is plunging headfirst down the damp throat of what is clearly a very deep well.\n But as she falls, and her eyes become accustomed to the darkness, Alice realises that the sides of the well are lined with cupboards and bookshelves. Looking down she can see no end to the well-shaft in sight.\n However, she is coming up on another cupboard.",
+        "options": [
+            [109, "Alice should try to find out what it holds as she passes"],
+            [156, "Alice shouldn't do anything"]
+        ]
+    },
+     "64" : {
+        "content": "An arm up in front of her face to shield her eyes from the force of the wind, Alice determinedly strides into the teeth of the rising gale as leaves and twigs whirl about her. A thorny branch suddenly whips past, catching her, leaving a deep gouge in the flesh of her exposed fore-arm, causing Alice to gasp in pain and surprise. (Alice losses one endurance point)\n The rumble of thunder comes again, closer now and louder, only it’s not thunder, it is the sound of booming laughter. Looking up at the storm-wracked sky, Alice can see a hideous face forming amidst the clouds. It is that of an ugly woman, with a large pointed nose, wobbly double chins, and wearing a crown. And its glowering storm-cloud eyes are fixed on Alice. (Alice's insanity increases by 1)\n The wind is getting stronger all the time. Glancing after the White Rabbit, Alice sees it vanish down a rabbit-hole at the edge of the field. There is no other shelter within sight.",
+        "options": [
+            [96, "Alice should seek shelter inside the rabbit-hole"],
+            [85, "Alice should stand strong in the face of the growing storm"]
+        ],
+        "event": 
+            [{
+                "name": "endurance",
+                "change": -1
+            },
+            {
+                "name": "insanity",
+                "change": 1
+            }]
+    },
+     "82" : {
+        "content": "Tumbling head over heels, Alice sees that she is fast approaching a rickety bookcase. ",
+        "options": [
+            [102, "Alice grabs a book from a shelf as she falls past"],
+            [62, "Alice should leave her hands free, just in case"]
+        ],
+        "sample_end": true
+    },
+     "85" : {
+        "content": "The wind whips waves across the surface of the river, shaking the willows’ whip-like fronds. The thunderous rumbling comes again as the face in the clouds starts to laugh.\n Alice is helpless in the face of the gale. The wind lifts her off her feet and she is tossed about like just another leaf in the storm.\n Sticks and branches whirl about her as the howling gale carries her across the field. She can see the rabbit-hole beneath her now. And then suddenly the wind drops as quickly as it arose and she is falling, plummeting towards the ground, the entrance to the burrow yawning beneath her like a gaping, earthy mouth.\n It is then that a spinning branch hits her on the head, knocking her senseless.",
+        "options": [
+            [191]
+        ],
+        "event": [{
+            "name": "endurance",
+            "change": -2
+        }]
+    },
+     "96" : {
+        "content": "Reaching the rabbit-hole, without a second thought Alice throws herself into the earthy gloom.",
+        "options": [
+            [57]
+        ]
+    },
+     "109" : {
+        "content": "Taking something from the cupboard whilst falling down the well isn't going to be as easy as perhaps it sounds.",
+        "options": [
+            [133], 
+            [156]
+        ],
+        "test": "agility"
+    },
+     "114" : {
+        "content": "Before her is another long passage. There is no sign of the White Rabbit but she can hear the tick and rattle of clockwork coming from somewhere up ahead.\n There's not a moment to lose. Chasing off down the passage Alice turns a corner and finds herself in a long, low hall, lit by lamps hanging from the roof. There are doors all around the hall but what has really attracted her attention are the two stick-like figures stalking towards her on pin-like legs.\n Although they are shaped like men, they most definitely are not men, since they are quite clearly made from pieces of metal, and their visible innards look like the workings of a clock.\n Tick-tock, tick-tock, go to clock mechanisms as the metal man stuck towards her, a sinister glint in their watch-case eyes. Tick-tock, tick-tock.\n The horrid vision of this clockwork creations, their brass body parts glinting in the lamplight, fills Alice with dread (Alice’s is insanity increases by 1). Quaking in fear, her face as white as a sheet, what should Alice do now?",
+        "options": [
+            [5, "Alice tries to dodge past the advancing Tick-Tock Men"],
+            [226, "Alice tries talking to the clockwork creations"],
+            [169, "Alice attacks the Tick-Tock Men, before they can attack her"],
+            [246, "Alice tries to think her way out of such a dangerous situation"],
+            [130, "Alice uses her “Curioser and Curioser” ability"]
+
+        ],
+        "event": [{
+            "name": "insanity",
+            "change": 1
+        }]
+    },
+     "130": {
+        "content": "First she has a conversation with a talking, clockwork rabbit, then she finds herself falling down an impossibly deep well, and now she finds herself being threatened by two skeletal clockwork men. “Curioser and curioser,” says Alice.\n But just when she thinks things cannot possibly get any stranger, before her very eyes one of the Tick-Tock Men starts to transform. As she watches it jerks and twitches and appears to divide itself in two down the middle. More limbs unfold from the bifurcated body parts and Alice finds herself now facing three of the curious clockwork creations rather than just two! \n The three horrors scrape their gleaming metal claws together, sending sparks flying from the keenly-honed blades, leaving Alice with no doubt in her mind as to what they intend for her.",
+        "options": [
+            [189, "Alice should now make use of The Pen is Mightier ability"],
+            [150, "Alice prepares to fight the Tick-Tock Men"]
+        ],
+        "sample_end": true
+     },
+     "133" : {
+        "content": "Alice manages to open the cupboard door with one hand and reach inside with the other, pulling out a large pair of scissors.\n (Scissors have been added to Alice’s inventory. If she ever finds herself in combat with one of the strange denizens that inhabit Wonderland she may use the Scissors as a weapon, causing 3 points of damage to her opponent’s Endurance score with every successful strike rather than the usual 2.",
+        "options": [
+            [156]
+        ],
+        "inventory": "scissors"
+    },
+     "156" : {
+        "content": "As Alice continues to tumble down the well she sees a dresser racing up to meet her.",
+        "options": [
+            [178, "Alice grabs whatever she can from the dresser"],
+            [12, "Alice doesn’t do anything"]
+        ]
+    },
+     "169" : {
+        "content": "Her heart pounding in her chest, Alice runs at the sinister Tick-Tock Men as the mechanical horror scraped their gleaming metal claws together, sending sparks flying from the keenly-honed blades.",
+        "options": [
+            [189, "Alice should make use of her “The Pen is Mightier” ability"],
+            [209, "Alice shouldn’t do anything"]
+        ]
+    },
+     "178" : {
+        "content": "Flinging out a hand, Alice snatches a jar from the dresser shelf. Written on the label stuck to the glass in a spidery hand are the words “Orange Marmalade”, and the jar is full.\n (The jar of marmalade has been added to Alice’s adventure sheet. It contains enough for four portions. Alice may choose to eat a portion of the marmalade at any time, apart from when she is in the middle of combat, and will replenish up to 4 Endurance point points by doing so.)",
+        "options": [
+            [12]
+        ],
+        "inventory": "Marmalade Jar"
+    },
+     "191" : {
+        "content": "Alice is brought to her senses again as she lands with a soft thud atop a pile of dry leaves. Lying on her back among the leaves, she finds herself staring up at what appears to be a circular well shaft.\n She feels like she barely has her wits about her; the blow to the head she received was clearly much worse than she first thought and had left her feeling quite dizzy.",
+        "options": [
+            [114]
+        ],
+        "event": [{
+            "name": "logic",
+            "change": -1
+        }, {
+            "name": "combat",
+            "change": -1
+        }]
+    },
+     "209" : {
+        "content": "The Tick-Tock Menprepare to meet Alice’s assault with weirdly lurching movements that are strangely out of time with the ceaseless ticking of their internal mechanisms.",
+        "options": []
+    },
+     "226" : {
+        "content": "“Good day to you,” says Alice, having been brought up to always be polite, no matter what the occasion. The Tick-Tock Men say nothing, but continue their relentless advance. With time running out, the disappearing seconds marked by the ticking of the mechanical men’s inner workings, Alice is going to have to try something else—and quickly!Good day to you,” says Alice, having been brought up to always be polite, no matter what the occasion. The Tick-Tock Men say nothing, but continue their relentless advance. With time running out, the disappearing seconds marked by the ticking of the mechanical men’s inner workings, Alice is going to have to try something else—and quickly!",
+        "options": [
+            [5, "Alice should try to dodge past the advancing Tick-Tock Men"],
+            [169, "Alice should attack the Tick-Tock Men, before they can attack her"]
+        ]
+    },
+     "246" : {
+        "content": "As Alice tries to think away out of her dire situation, the Tick-Tock Men continue to advance with lurching movements that are strangely out of time with the ceaseless ticking of their internal clockwork mechanisms. ",
+        "options": [
+            [263],
+            [278]
+    ],
+        "test": "logic",
+        "sample_end": true
+    }
+}
