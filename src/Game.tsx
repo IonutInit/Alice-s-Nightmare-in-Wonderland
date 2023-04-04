@@ -1,14 +1,20 @@
-import React from "react"
+import React from "react";
 
-import SimpleOptions from "./SimpleOptions"
+import SimpleOptions from "./SimpleOptions";
 
-import content from "./data/content.json"
+import { Props, Content } from "../types";
 
-function Game({dispatch, state}) {
-    const chapter = state.chapter
- 
+// const content: Content = require("./data/content.json");
+
+import importedContent from "./data/content.json";
+
+const content: Content = importedContent;
+
+function Game({ dispatch, state }: Props) {
+  const { chapter } = state;
+
   return (
- <div>
+    <div>
       {content[chapter].content
         .split("\n")
         .map((line: string, index: number) => (
@@ -19,9 +25,9 @@ function Game({dispatch, state}) {
             <br />
           </React.Fragment>
         ))}
-        <SimpleOptions state={state} dispatch={dispatch}/>
+      <SimpleOptions state={state} dispatch={dispatch} />
     </div>
-  )
+  );
 }
 
-export default Game
+export default Game;

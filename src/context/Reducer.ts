@@ -1,30 +1,25 @@
-export const ACTIONS = {
-    ACTIVATE_INTRODUCTION: "activate_introduction",
-    ACTIVATE_ATTRIBUTES: "activate_attributes",
-    ACTIVATE_GAME: "activate_game",
-    CHANGE_CHAPTER: "change_chapter",
-    INCREASE_ATTRIBUTE: "increase_attribute",
-}
+import { GameState, Action } from "../../types";
 
-export default function reducer(state, action) {
+export default function reducer(state: GameState, action: Action) {
   switch (action.type) {
-    case ACTIONS.ACTIVATE_INTRODUCTION:
-      return {...state, gameState: 1}
-    case ACTIONS.ACTIVATE_ATTRIBUTES:
-      return {...state, gameState: 2}
-    case ACTIONS.ACTIVATE_GAME:
-      return {...state, gameState: 3}
-    case ACTIONS.CHANGE_CHAPTER:
-        return {...state, chapter: action.payload}
-    case ACTIONS.INCREASE_ATTRIBUTE:
-        return {
-            ...state,
-            alice: {
-                ...state.alice,
-                [action.payload.attribute]: state.alice[action.payload.attribute] + action.payload.amount
-            }
-        }
+    case "activate_introduction":
+      return { ...state, gameState: 1 };
+    case "activate_attributes":
+      return { ...state, gameState: 2 };
+    case "activate_game":
+      return { ...state, gameState: 3 };
+    case "change_chapter":
+      return { ...state, chapter: action.payload };
+    case "modify_attribute":
+      return {
+        ...state,
+        alice: {
+          ...state.alice,
+          [action.payload.attribute]:
+            state.alice[action.payload.attribute] + action.payload.amount,
+        },
+      };
     default:
-      return state
+      return state;
   }
 }

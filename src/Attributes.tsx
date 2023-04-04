@@ -1,29 +1,59 @@
-import { ACTIONS } from "./context/Reducer" 
-import content from "./data/content.json"
-import gameData from "./data/gameData"
+import { useState } from "react";
 
-function Attributes({dispatch}) {
-    const {agility, logic, insanity, endurance} = gameData.alice;
-  const attributes = Object.entries({agility, logic, insanity, endurance});
-    console.log(gameData.alice)
+import { Props } from "../types";
+
+function Attributes({ state, dispatch }: Props) {
+  const { agility, logic, combat, endurance } = state.alice;
+  const [initialValue] = useState(state.alice);
+  const attributes = Object.entries({ agility, logic, combat, endurance });
+
+  const [points, setPoints] = useState(10);
+  const maxPerAttribute = 5;
+
+  function modifyAttribute(attribute: string, value: number) {
+    setPoints(() => points - value);
+    dispatch({
+      type: "modify_attribute",
+      payload: { attribute, amount: value },
+    });
+  }
 
   return (
     <div>
-          {attributes.map(([name, value]) => (
-        <div key={name}>
-          <button onClick={() => {
-            dispatch({type: ACTIONS.INCREASE_ATTRIBUTE, payload: { name, amount: 1}})
-          }}>+</button>
-          {name.toUpperCase()}: {value}
-          <button>-</button>
+      {attributes.map(([attribute, value]) => (
+        <div key={attribute}>
+          <button
+            type="button"
+            onClick={() => modifyAttribute(attribute, 1)}
+            disabled={
+              points === 0 || value >= initialValue[attribute] + maxPerAttribute
+            }
+          >
+            +
+          </button>
+          {attribute.toUpperCase()}: {value}
+          <button
+            type="button"
+            onClick={() => modifyAttribute(attribute, -1)}
+            disabled={points === 10 || value <= initialValue[attribute]}
+          >
+            -
+          </button>
+          <p>{}</p>
         </div>
       ))}
-
-        <button onClick={() => {
-        dispatch({type: ACTIONS.ACTIVATE_GAME})
-     }}>NEXT</button> 
-    </div> 
-  )
+      <p>Points remaining: {points}</p>
+      <button
+        type="button"
+        disabled={points !== 0}
+        onClick={() => {
+          dispatch({ type: "activate_game" });
+        }}
+      >
+        NEXT
+      </button>
+    </div>
+  );
 }
 
-export default Attributes
+export default Attributes;

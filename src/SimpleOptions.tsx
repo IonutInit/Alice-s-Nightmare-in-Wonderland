@@ -1,23 +1,30 @@
-import { ACTIONS } from "./context/Reducer"
-import content from "./data/content.json"
+import content from "./data/content.json";
 
-const SimpleOptions = ({state, dispatch}) => {
-    function handleClick(newChapter) {
-        dispatch({
-            type: ACTIONS.CHANGE_CHAPTER,
-            payload: newChapter 
-        })
-    }
+import { Props, Content } from "../types";
+
+const SimpleOptions = ({ state, dispatch }: Props) => {
+  function handleClick(newChapter: number) {
+    dispatch({
+      type: "change_chapter",
+      payload: newChapter,
+    });
+  }
+
+  const typedContent: Content = content;
 
   return (
     <>
-        {content[state.chapter].options.map((option) => (
-            <button onClick={() => handleClick(option[0])}>
-                {option[1] === undefined ? "Move on": option[1]}
-            </button>
-        ))}
+      {typedContent[state.chapter].options.map((option) => (
+        <button
+          type="button"
+          key={state.chapter}
+          onClick={() => handleClick(Number(option[0]))}
+        >
+          {option[1] === undefined ? "Move on" : option[1]}
+        </button>
+      ))}
     </>
-  )
-}
+  );
+};
 
-export default SimpleOptions
+export default SimpleOptions;
