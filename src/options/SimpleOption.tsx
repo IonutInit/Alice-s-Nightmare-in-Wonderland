@@ -1,8 +1,10 @@
-import content from "./data/content.json";
+import { useEffect } from "react";
 
-import { Props, Content } from "../types";
+import content from "../data/content.json";
 
-const SimpleOptions = ({ state, dispatch }: Props) => {
+import { Props, Content } from "../../types";
+
+const SimpleOption = ({ state, dispatch }: Props) => {
   function handleClick(newChapter: number) {
     dispatch({
       type: "change_chapter",
@@ -12,12 +14,18 @@ const SimpleOptions = ({ state, dispatch }: Props) => {
 
   const typedContent: Content = content;
 
+  useEffect(() => {
+    dispatch({
+      type: "clear_options",
+    });
+  }, [dispatch]);
+
   return (
     <>
       {typedContent[state.chapter].options.map((option) => (
         <button
           type="button"
-          key={state.chapter}
+          key={option[0]}
           onClick={() => handleClick(Number(option[0]))}
         >
           {option[1] === undefined ? "Move on" : option[1]}
@@ -27,4 +35,4 @@ const SimpleOptions = ({ state, dispatch }: Props) => {
   );
 };
 
-export default SimpleOptions;
+export default SimpleOption;

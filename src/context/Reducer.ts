@@ -10,6 +10,8 @@ export default function reducer(state: GameState, action: Action) {
       return { ...state, gameState: 3 };
     case "change_chapter":
       return { ...state, chapter: action.payload };
+    case "clear_options":
+      return { ...state, options: [] };
     case "modify_attribute":
       return {
         ...state,

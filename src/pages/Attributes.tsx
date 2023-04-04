@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Props } from "../types";
+import { Props } from "../../types";
 
 function Attributes({ state, dispatch }: Props) {
   const { agility, logic, combat, endurance } = state.alice;

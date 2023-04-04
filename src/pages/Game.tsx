@@ -1,12 +1,10 @@
 import React from "react";
 
-import SimpleOptions from "./SimpleOptions";
+import SimpleOption from "../options/SimpleOption";
 
-import { Props, Content } from "../types";
+import { Props, Content } from "../../types";
 
-// const content: Content = require("./data/content.json");
-
-import importedContent from "./data/content.json";
+import importedContent from "../data/content.json";
 
 const content: Content = importedContent;
 
@@ -25,7 +23,7 @@ function Game({ dispatch, state }: Props) {
             <br />
           </React.Fragment>
         ))}
-      <SimpleOptions state={state} dispatch={dispatch} />
+      <SimpleOption state={state} dispatch={dispatch} />
     </div>
   );
 }

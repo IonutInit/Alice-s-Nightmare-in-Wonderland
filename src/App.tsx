@@ -1,8 +1,8 @@
 import { useReducer } from "react";
-import Welcome from "./Welcome";
-import Introduction from "./Introduction";
-import Attributes from "./Attributes";
-import Game from "./Game";
+import Welcome from "./pages/Welcome";
+import Introduction from "./pages/Introduction";
+import Attributes from "./pages/Attributes";
+import Game from "./pages/Game";
 import "./App.css";
 
 import reducer from "./context/Reducer";
@@ -20,6 +20,7 @@ function App() {
         <Attributes dispatch={dispatch} state={state} />
       )}
       {state.gameState === 3 && <Game dispatch={dispatch} state={state} />}
+      <h1>{state.chapter}</h1>
     </div>
   );
 }

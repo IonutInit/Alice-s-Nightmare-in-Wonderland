@@ -18,6 +18,7 @@ export type Action =
   | { type: "activate_attributes" }
   | { type: "activate_game" }
   | { type: "change_chapter"; payload: number }
+  | { type: "clear_options" }
   | {
       type: "modify_attribute";
       payload: { attribute: string; amount: number };
