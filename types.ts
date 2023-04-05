@@ -7,10 +7,16 @@ export type Alice = {
   endurance: number;
 };
 
+type Inventory = [string, number][];
+
+type Log = string[];
+
 export type GameState = {
   gameState: number;
   chapter: number;
   alice: Alice;
+  inventory: Inventory;
+  log: Log;
 };
 
 export type Action =
