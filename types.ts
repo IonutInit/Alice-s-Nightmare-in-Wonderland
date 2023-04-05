@@ -28,6 +28,10 @@ export type Dispatch = {
   dispatch: (action: Action) => void;
 };
 
+export type State = {
+  state: GameState;
+};
+
 export type Props = {
   state: GameState;
   dispatch: (action: Action) => void;
