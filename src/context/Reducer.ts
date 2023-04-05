@@ -1,4 +1,5 @@
 import { GameState, Action } from "../../types";
+import gameData from "../data/gameData";
 
 export default function reducer(state: GameState, action: Action) {
   switch (action.type) {
@@ -21,6 +22,8 @@ export default function reducer(state: GameState, action: Action) {
             state.alice[action.payload.attribute] + action.payload.amount,
         },
       };
+    case "reset":
+      return gameData;
     default:
       return state;
   }

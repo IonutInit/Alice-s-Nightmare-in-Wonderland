@@ -22,7 +22,8 @@ export type Action =
   | {
       type: "modify_attribute";
       payload: { attribute: string; amount: number };
-    };
+    }
+  | { type: "reset" };
 
 export type Dispatch = {
   dispatch: (action: Action) => void;
@@ -44,5 +45,6 @@ export type Content = {
     options: (string | number)[][];
     test?: string;
     event?: { name: string; change: number }[];
+    sample_end?: boolean;
   };
 };
