@@ -11,23 +11,23 @@ export function sumDie(die: number[]) {
   return die.reduce((acc, cur) => acc + cur, 0);
 }
 
-export function rollResults(results: number[]): string {
-  const len = results.length;
+export function rollResults(dice: number[]): string {
+  const len = dice.length;
   if (len === 1) {
-    return `You rolled a ${results[0]}`;
+    return `You rolled a ${dice[0]}.`;
   }
   if (len === 2) {
-    return `You rolled a ${results[0]} and a ${results[1]}`;
+    return `You rolled a ${dice[0]} and a ${dice[1]}.`;
   }
-  let rollStr = "You rolled ";
+  let resultString = "You rolled ";
   for (let i = 0; i < len; i += 1) {
     if (i === len - 1) {
-      rollStr += "and ";
+      resultString += "and ";
     }
-    rollStr += `a ${results[i]}`;
+    resultString += `a ${dice[i]}`;
     if (i !== len - 1) {
-      rollStr += ", ";
+      resultString += ", ";
     }
   }
-  return `${rollStr}.`;
+  return `${resultString}.`;
 }

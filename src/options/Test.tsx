@@ -3,9 +3,10 @@ import { useState } from "react";
 import importedContent from "../data/content.json";
 
 import { spellArticle } from "../lib/textFunctions";
-import { rollDie, rollResults, sumDie } from "../lib/rollDie";
+import { rollResults } from "../lib/rollDie";
+import resolveTest from "../lib/resolveTest";
 
-import { Props, Content } from "../../types";
+import { Props, Content, Attribute } from "../../types";
 
 const content: Content = importedContent;
 
@@ -17,21 +18,11 @@ function Test({ state, dispatch }: Props) {
   const [newChapter, setNewChapter] = useState(0);
   const { chapter } = state;
   const candidateChapters = content[chapter].options;
-  const testAttribute = content[chapter].test;
+  const testAttribute: Attribute = content[chapter].test as Attribute;
   const testCase = state.alice[`${testAttribute}`];
 
-  function resolveTest(attribute: string) {
-    let result: [boolean, number[]] | [] = [];
-    if (attribute === "agility") {
-      const [...dice] = rollDie(2);
-      const sum = sumDie(dice);
-      result = [sum <= testCase, [...dice]];
-    }
-    return result;
-  }
-
   const handleTest = () => {
-    const [outcome, dice] = resolveTest(testAttribute ?? "");
+    const [outcome, dice] = resolveTest(testAttribute ?? "", testCase);
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     outcome
       ? setNewChapter(Number(candidateChapters[0]))
@@ -42,10 +33,28 @@ function Test({ state, dispatch }: Props) {
     });
     dispatch({
       type: "update_log",
-      payload: `${rollResults(dice ?? [])} ${
-        outcome ? " That's good" : "Could have been better"
-      }.`,
+      payload: `${rollResults(dice ?? [])} 
+      ${
+        testAttribute !== "die"
+          ? `${outcome ? "That's good" : "Could have been better"}.`
+          : ""
+      }`,
     });
+  };
+
+  const carryOnTextDisplay = () => {
+    let result = "";
+    if (testAttribute !== "die") {
+      result = `The test resolved ${
+        !testTaken.outcome ? "un" : ""
+      }favourably. Carry on to ${newChapter}`;
+    }
+    if (testAttribute === "die") {
+      result = `The number was ${
+        testTaken.outcome ? "odd" : "even"
+      }. Go this way!`;
+    }
+    return result;
   };
 
   const carryOn = () => {
@@ -65,9 +74,10 @@ function Test({ state, dispatch }: Props) {
 
       {testTaken.isTaken && (
         <button type="button" onClick={carryOn}>
-          {`The test resolved ${
+          {/* {`The test resolved ${
             !testTaken.outcome ? "un" : ""
-          }favourably. Carry on to ${newChapter}`}
+          }favourably. Carry on to ${newChapter}`} */}
+          {carryOnTextDisplay()}
         </button>
       )}
     </div>

@@ -55,3 +55,11 @@ export type Content = {
     sample_end?: boolean;
   };
 };
+
+export type Attribute =
+  | "agility"
+  | "logic"
+  | "insanity"
+  | "combat"
+  | "endurance"
+  | "die";
