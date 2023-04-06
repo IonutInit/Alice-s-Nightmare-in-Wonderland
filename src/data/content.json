@@ -40,7 +40,8 @@
         "options": [
             [296, "Alice should keep trying the doors"],
             [169, "Alice should turn and prepare to face the sinister guardians of this place"]
-        ]
+        ],
+        "sample_end": true
     },
      "33" : {
         "content": "Reaching out with both hands, Alice plucks the nearest picture from the wall.",
@@ -85,16 +86,11 @@
         "options": [
             [96, "Alice should seek shelter inside the rabbit-hole"],
             [85, "Alice should stand strong in the face of the growing storm"]
-        ],
-        "event": 
-            [{
-                "name": "endurance",
-                "change": -1
-            },
-            {
-                "name": "insanity",
-                "change": 1
-            }]
+        ]
+
+
+
+
     },
      "82" : {
         "content": "Tumbling head over heels, Alice sees that she is fast approaching a rickety bookcase. ",
