@@ -10,7 +10,11 @@ export default function reducer(state: GameState, action: Action) {
     case "activate_game":
       return { ...state, gameState: 3 };
     case "change_chapter":
-      return { ...state, chapter: action.payload };
+      return {
+        ...state,
+        chapter: action.payload,
+        log: [`You are on chapter ${action.payload}`, ...state.log],
+      };
     case "clear_options":
       return { ...state, options: [] };
     case "modify_attribute":
@@ -21,6 +25,11 @@ export default function reducer(state: GameState, action: Action) {
           [action.payload.attribute]:
             state.alice[action.payload.attribute] + action.payload.amount,
         },
+      };
+    case "update_log":
+      return {
+        ...state,
+        log: [action.payload, ...state.log],
       };
     case "reset":
       return gameData;

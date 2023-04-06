@@ -21,6 +21,11 @@ function Console({ state }: State) {
       <p>------------------------------</p>
       Inventory goes here
       <p>------------------------------</p>
+      <div>
+        Console:
+        <p>{state.log[0]}</p>
+      </div>
+      <p>------------------------------</p>
     </div>
   );
 }

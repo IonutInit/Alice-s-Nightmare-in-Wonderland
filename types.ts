@@ -29,6 +29,7 @@ export type Action =
       type: "modify_attribute";
       payload: { attribute: string; amount: number };
     }
+  | { type: "update_log"; payload: string }
   | { type: "reset" };
 
 export type Dispatch = {
