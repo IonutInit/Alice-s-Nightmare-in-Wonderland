@@ -8,6 +8,8 @@ import EndOfSample from "../options/EndOfSample";
 
 import importedContent from "../data/content.json";
 
+import handleEvent from "../lib/handleEvent";
+
 import { Props, Content } from "../../types";
 
 const content: Content = importedContent;
@@ -15,30 +17,9 @@ const content: Content = importedContent;
 function Game({ dispatch, state }: Props) {
   const chapter = content[state.chapter];
 
-  const handleEvent = () => {
-    if (chapter.event !== undefined) {
-      const attribute = chapter.event[0].name;
-      const amount = chapter.event[0].change;
-      const eventIsGood = amount > 0;
-      const multiplePoints = Math.abs(amount) !== 1;
-      dispatch({
-        type: "modify_attribute",
-        payload: {
-          attribute,
-          amount,
-        },
-      });
-      dispatch({
-        type: "update_log",
-        payload: `You have ${eventIsGood ? "won" : "lost"} ${Math.abs(
-          amount
-        )} ${attribute} point${multiplePoints ? "s" : ""}!`,
-      });
-    }
-  };
-
   useEffect(() => {
-    handleEvent();
+    handleEvent(chapter.event, dispatch);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chapter, dispatch, state.chapter]);
 
   const caseForEndOfSample = chapter.sample_end;
