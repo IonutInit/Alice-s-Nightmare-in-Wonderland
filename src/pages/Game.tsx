@@ -9,6 +9,7 @@ import EndOfSample from "../options/EndOfSample";
 import importedContent from "../data/content.json";
 
 import handleEvent from "../lib/handleEvent";
+import handleInventory from "../lib/handleInventory";
 
 import { Props, Content } from "../../types";
 
@@ -19,29 +20,7 @@ function Game({ dispatch, state }: Props) {
 
   useEffect(() => {
     handleEvent(chapter.event, dispatch);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [chapter, dispatch, state.chapter]);
-
-  useEffect(() => {
-    function handleInventory() {
-      const quantity = 1;
-      const uses = 1;
-      if (chapter.inventory !== undefined) {
-        dispatch({
-          type: "add_to_inventory",
-          payload: {
-            item: chapter.inventory,
-            quantity,
-            uses,
-          },
-        });
-        dispatch({
-          type: "update_log",
-          payload: `You got ${chapter.inventory}!`,
-        });
-      }
-    }
-    handleInventory();
+    handleInventory(chapter.inventory!, dispatch); // did not used undefined in types, as I did with event, as it creates a whole series of problems
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chapter, dispatch, state.chapter]);
 
