@@ -23,7 +23,10 @@ function Console({ state }: State) {
       <p>------------------------------</p>
       <div>
         Console:
-        <p>{state.log[0]}</p>
+        {state.log.map((log, index) => {
+          // eslint-disable-next-line react/no-array-index-key
+          return <p key={index}>{log}</p>;
+        })}
       </div>
       <p>------------------------------</p>
     </div>

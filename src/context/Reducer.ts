@@ -29,7 +29,7 @@ export default function reducer(state: GameState, action: Action) {
     case "update_log":
       return {
         ...state,
-        log: [action.payload, ...state.log],
+        log: [...state.log, action.payload],
       };
     case "reset":
       return gameData;
