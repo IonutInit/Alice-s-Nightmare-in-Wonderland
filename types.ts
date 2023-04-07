@@ -7,7 +7,11 @@ export type Alice = {
   endurance: number;
 };
 
-type Inventory = [string, number][];
+type Inventory = {
+  item: string;
+  quantity: number;
+  uses: number;
+}[];
 
 type Log = string[];
 
@@ -30,6 +34,10 @@ export type Action =
       payload: { attribute: string; amount: number };
     }
   | { type: "update_log"; payload: string }
+  | {
+      type: "add_to_inventory";
+      payload: { item: string; quantity: number; uses: number };
+    }
   | { type: "reset" };
 
 export type Dispatch = {
@@ -54,6 +62,7 @@ export type Content = {
     options: (string | number)[][];
     test?: string;
     event?: Event;
+    inventory?: string;
     sample_end?: boolean;
   };
 };

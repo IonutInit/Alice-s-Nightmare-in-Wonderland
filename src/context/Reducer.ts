@@ -13,7 +13,7 @@ export default function reducer(state: GameState, action: Action) {
       return {
         ...state,
         chapter: action.payload,
-        log: [`You are on chapter ${action.payload}`, ...state.log],
+        log: [...state.log, `You are on chapter ${action.payload}`],
       };
     case "clear_options":
       return { ...state, options: [] };
@@ -25,6 +25,11 @@ export default function reducer(state: GameState, action: Action) {
           [action.payload.attribute]:
             state.alice[action.payload.attribute] + action.payload.amount,
         },
+      };
+    case "add_to_inventory":
+      return {
+        ...state,
+        inventory: [...state.inventory, action.payload],
       };
     case "update_log":
       return {

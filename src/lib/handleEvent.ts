@@ -17,7 +17,6 @@ function modifyAttributes(
 
 function updateLog(
   dispatch: Dispatch<Action>,
-  event: Event,
   attribute: Attribute,
   amount: number
 ) {
@@ -41,7 +40,7 @@ function handleEvent(event: Event, dispatch: Dispatch<Action>) {
 
       modifyAttributes(dispatch, attribute as Attribute, amount);
 
-      updateLog(dispatch, event, attribute as Attribute, amount);
+      updateLog(dispatch, attribute as Attribute, amount);
     }
   }
 }

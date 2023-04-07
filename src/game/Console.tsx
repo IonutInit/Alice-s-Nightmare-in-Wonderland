@@ -8,6 +8,8 @@ function Console({ state }: State) {
     value,
   ]);
 
+  const { inventory } = state;
+
   return (
     <div>
       <p>------------------------------</p>
@@ -19,7 +21,15 @@ function Console({ state }: State) {
         );
       })}
       <p>------------------------------</p>
-      Inventory goes here
+      <p>Inventory:</p>
+      {inventory.map((item, index) => {
+        return (
+          // eslint-disable-next-line react/no-array-index-key
+          <button type="button" key={index}>
+            {item.item}
+          </button>
+        );
+      })}
       <p>------------------------------</p>
       <div>
         Console:

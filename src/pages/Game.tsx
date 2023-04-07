@@ -22,6 +22,29 @@ function Game({ dispatch, state }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chapter, dispatch, state.chapter]);
 
+  useEffect(() => {
+    function handleInventory() {
+      const quantity = 1;
+      const uses = 1;
+      if (chapter.inventory !== undefined) {
+        dispatch({
+          type: "add_to_inventory",
+          payload: {
+            item: chapter.inventory,
+            quantity,
+            uses,
+          },
+        });
+        dispatch({
+          type: "update_log",
+          payload: `You got ${chapter.inventory}!`,
+        });
+      }
+    }
+    handleInventory();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [chapter, dispatch, state.chapter]);
+
   const caseForEndOfSample = chapter.sample_end;
   const caseForTest = chapter.test;
 
