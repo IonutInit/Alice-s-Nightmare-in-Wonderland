@@ -1,25 +1,49 @@
-const handleEvent = (event, dispatch) => {
+import { Dispatch } from "react";
+import { Event, Attribute, Action } from "../../types";
+
+function modifyAttributes(
+  dispatch: Dispatch<Action>,
+  attribute: Attribute,
+  amount: number
+) {
+  dispatch({
+    type: "modify_attribute",
+    payload: {
+      attribute,
+      amount,
+    },
+  });
+}
+
+function updateLog(
+  dispatch: Dispatch<Action>,
+  event: Event,
+  attribute: Attribute,
+  amount: number
+) {
+  const whatHappened = amount > 0 && attribute !== "insanity" ? "won" : "lost";
+  const pointsText = Math.abs(amount) !== 1 ? "points" : "point";
+  const payload = `You have ${whatHappened} ${Math.abs(
+    amount
+  )} ${attribute} ${pointsText}.`;
+
+  dispatch({
+    type: "update_log",
+    payload,
+  });
+}
+
+function handleEvent(event: Event, dispatch: Dispatch<Action>) {
   if (event !== undefined) {
     for (let i = 0; i < event.length; i += 1) {
       const attribute = event[i].name;
       const amount = event[i].change;
-      const eventIsGood = amount > 0;
-      const multiplePoints = Math.abs(amount) !== 1;
-      dispatch({
-        type: "modify_attribute",
-        payload: {
-          attribute,
-          amount,
-        },
-      });
-      dispatch({
-        type: "update_log",
-        payload: `You have ${eventIsGood ? "won" : "lost"} ${Math.abs(
-          amount
-        )} ${attribute} point${multiplePoints ? "s" : ""}!`,
-      });
+
+      modifyAttributes(dispatch, attribute as Attribute, amount);
+
+      updateLog(dispatch, event, attribute as Attribute, amount);
     }
   }
-};
+}
 
 export default handleEvent;

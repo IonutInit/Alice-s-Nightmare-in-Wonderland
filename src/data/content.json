@@ -86,11 +86,16 @@
         "options": [
             [96, "Alice should seek shelter inside the rabbit-hole"],
             [85, "Alice should stand strong in the face of the growing storm"]
-        ]
-
-
-
-
+        ],
+        "event": 
+            [{
+                "name": "endurance",
+                "change": -1
+            },
+            {
+                "name": "insanity",
+                "change": 1
+            }]
     },
      "82" : {
         "content": "Tumbling head over heels, Alice sees that she is fast approaching a rickety bookcase. ",

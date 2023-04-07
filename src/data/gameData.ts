@@ -1,6 +1,6 @@
 const gameData = {
   gameState: 3,
-  chapter: 64,
+  chapter: 20,
   alice: {
     agility: 6,
     logic: 6,

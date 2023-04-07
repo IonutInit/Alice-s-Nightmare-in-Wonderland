@@ -45,13 +45,15 @@ export type Props = {
   dispatch: (action: Action) => void;
 };
 
+export type Event = { name: string; change: number }[] | undefined;
+
 export type Content = {
   [key: string]: {
     title?: string;
     content: string;
     options: (string | number)[][];
     test?: string;
-    event?: { name: string; change: number }[];
+    event?: Event;
     sample_end?: boolean;
   };
 };
