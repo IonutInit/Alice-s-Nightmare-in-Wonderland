@@ -16,6 +16,7 @@ type FightResult = [
 function fight(
   aliceCombatStats: number,
   enemyCombatStats: number,
+  enemyName: string,
   startingInitiative: number,
   dispatch: Dispatch<Action>
 ): FightResult {
@@ -51,10 +52,13 @@ function fight(
 
     if (die[0] % 2 !== 0) {
       payload = 0;
-      gameResult = "It's a tie. Both Alice and her opponent have been injured!";
+      gameResult = `It's a tie. Both Alice and the ${enemyName} have been injured!`;
+      dispatch({
+        type: "update_log",
+        payload: `Alice has lost 1 endurance point against ${enemyName}.`,
+      });
     } else {
-      gameResult =
-        "It's a tie: Alice and her opponent deflect each other's attack.";
+      gameResult = `It's a tie: Alice and ${enemyName} deflect each other's attack.`;
     }
   }
 
@@ -63,6 +67,10 @@ function fight(
     aliceInitative = 0;
     enemyInitiative = 1;
     gameResult = "Alice lost this round...";
+    dispatch({
+      type: "update_log",
+      payload: `Alice has lost 2 endurance points in fighting the ${enemyName}.`,
+    });
   }
 
   dispatch({
