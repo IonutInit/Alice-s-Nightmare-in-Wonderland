@@ -15,34 +15,16 @@ import getEnemy from "../lib/getEnemy";
 
 import { Props, Content } from "../../types";
 
-import { rollDie, sumDie } from "../lib/rollDie";
-
 const content: Content = importedContent;
 
 function Game({ dispatch, state }: Props) {
   const chapter = content[state.chapter];
-
-  // if (content[state.chapter].combat !== undefined) {
-  //   const [enemyName, enemyEndurance, enemyCombat] =
-  //     content[state.chapter].combat;
-  //   const enemy = new Enemy(enemyName, enemyCombat, enemyEndurance, 0);
-  //   console.log(enemy)
-  // }
 
   useEffect(() => {
     handleEvent(chapter.event, dispatch);
     handleInventory(chapter.inventory!, dispatch); // did not used undefined in types, as I did with event, as it creates a whole series of problems
     getEnemy(chapter.combat!, dispatch);
   }, [chapter, dispatch, state.chapter]);
-
-  // const fight = () => {
-  //   const aliceRoll = rollDie(2);
-  //   const enemyRoll = rollDie(2);
-
-  //   const aliceCombatRating = sumDie(aliceRoll);
-  // };
-
-  // fight();
 
   const caseForEndOfSample = chapter.sample_end;
   const caseForTest = chapter.test;
@@ -60,7 +42,7 @@ function Game({ dispatch, state }: Props) {
 
       {caseForEndOfSample && <EndOfSample dispatch={dispatch} />}
 
-      {caseForCombat && <Combat state={state} />}
+      {caseForCombat && <Combat state={state} dispatch={dispatch} />}
     </div>
   );
 }

@@ -56,6 +56,10 @@ export type Action =
         initiative: number;
       };
     }
+  | {
+      type: "take_hit";
+      payload: number;
+    }
   | { type: "reset" };
 
 export type Dispatch = {

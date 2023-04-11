@@ -1,12 +1,43 @@
-import { State } from "../../types";
+import { useState } from "react";
 
-function Combat({ state }: State) {
-  const { name, combat, endurance } = state.enemy;
+import fight from "../lib/fight";
+
+import { Props } from "../../types";
+
+function Combat({ state, dispatch }: Props) {
+  const [gameLog, setGameLog] = useState<string[]>([]);
+  const { name, combat, endurance, initiative } = state.enemy;
+
+  const handleFight = () => {
+    const [
+      currentInitiative,
+      aliceRoll,
+      enemyRoll,
+      aliceCombatRating,
+      enemyCombatRating,
+      gameResult,
+    ] = fight(state.alice.combat, combat, initiative, dispatch);
+
+    setGameLog(() => [
+      `${currentInitiative}`,
+      `Alice rolled a ${aliceRoll[0]} and a ${aliceRoll[1]}, a total attack of ${aliceCombatRating}.`,
+      `${name} rolled a ${enemyRoll[0]} and a ${enemyRoll[1]}, a total attack of ${enemyCombatRating}. `,
+      `${gameResult}`,
+    ]);
+  };
+
   return (
     <div>
       <p>{name}</p>
       <p>Combat: {combat}</p>
       <p>Endurance: {endurance}</p>
+      <button type="button" onClick={() => handleFight()}>
+        FIGHT!
+      </button>
+      {gameLog.map((log, index) => {
+        // eslint-disable-next-line react/no-array-index-key
+        return <p key={index}>{log}</p>;
+      })}
     </div>
   );
 }
