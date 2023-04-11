@@ -36,6 +36,11 @@ export default function reducer(state: GameState, action: Action) {
         ...state,
         log: [...state.log, action.payload],
       };
+    case "get_enemy":
+      return {
+        ...state,
+        enemy: action.payload,
+      };
     case "reset":
       return gameData;
     default:

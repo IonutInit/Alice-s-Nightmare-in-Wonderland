@@ -15,12 +15,21 @@ type Inventory = {
 
 type Log = string[];
 
+export type Enemy = {
+  [key: number]: number;
+  name: string;
+  combat: number;
+  endurance: number;
+  initiative: number;
+};
+
 export type GameState = {
   gameState: number;
   chapter: number;
   alice: Alice;
   inventory: Inventory;
   log: Log;
+  enemy: Enemy;
 };
 
 export type Action =
@@ -38,6 +47,15 @@ export type Action =
       type: "add_to_inventory";
       payload: { item: string; quantity: number; uses: number };
     }
+  | {
+      type: "get_enemy";
+      payload: {
+        name: string;
+        combat: number;
+        endurance: number;
+        initiative: number;
+      };
+    }
   | { type: "reset" };
 
 export type Dispatch = {
@@ -54,6 +72,7 @@ export type Props = {
 };
 
 export type Event = { name: string; change: number }[] | undefined;
+export type Combat = (string | number)[];
 
 export type Content = {
   [key: string]: {
@@ -64,6 +83,7 @@ export type Content = {
     event?: Event;
     inventory?: string;
     sample_end?: boolean;
+    combat?: Combat;
   };
 };
 

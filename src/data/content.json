@@ -61,7 +61,7 @@
      "42" : {
         "content": "Alice is fast, but the clockwork-driven Tick-Tock Men are faster. As Alice ducks left, one of them strikes her with the metal claws of an outstretched hand, sending her tumbling to the ground and opening three long scratches across her right arm.",
         "options": [
-            [289]
+            [209]
         ],
         "event": [{
             "name": "endurance",
@@ -195,7 +195,8 @@
     },
      "209" : {
         "content": "The Tick-Tock Menprepare to meet Alice’s assault with weirdly lurching movements that are strangely out of time with the ceaseless ticking of their internal mechanisms.",
-        "options": []
+        "options": [],
+        "combat": ["Tick-Tock Men", 7, 7]
     },
      "226" : {
         "content": "“Good day to you,” says Alice, having been brought up to always be polite, no matter what the occasion. The Tick-Tock Men say nothing, but continue their relentless advance. With time running out, the disappearing seconds marked by the ticking of the mechanical men’s inner workings, Alice is going to have to try something else—and quickly!Good day to you,” says Alice, having been brought up to always be polite, no matter what the occasion. The Tick-Tock Men say nothing, but continue their relentless advance. With time running out, the disappearing seconds marked by the ticking of the mechanical men’s inner workings, Alice is going to have to try something else—and quickly!",

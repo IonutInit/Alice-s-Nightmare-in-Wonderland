@@ -1,6 +1,6 @@
 const gameData = {
-  gameState: 0,
-  chapter: 0,
+  gameState: 3,
+  chapter: 42,
   alice: {
     agility: 6,
     logic: 6,
@@ -10,6 +10,12 @@ const gameData = {
   },
   inventory: [],
   log: [],
+  enemy: {
+    name: "",
+    combat: 0,
+    endurance: 0,
+    initiative: 0,
+  },
 };
 
 export default gameData;
