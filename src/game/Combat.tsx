@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import fight from "../lib/fight";
 
@@ -25,6 +25,17 @@ function Combat({ state, dispatch }: Props) {
       `${gameResult}`,
     ]);
   };
+
+  useEffect(() => {
+    const handleLoss = () => {
+      if (state.alice.endurance <= 0) {
+        dispatch({
+          type: "activate_game_lost",
+        });
+      }
+    };
+    handleLoss();
+  }, [dispatch, state.alice.endurance]);
 
   return (
     <div>

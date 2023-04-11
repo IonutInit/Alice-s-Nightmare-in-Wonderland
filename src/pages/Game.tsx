@@ -36,7 +36,9 @@ function Game({ dispatch, state }: Props) {
 
       <ChapterContent state={state} />
 
-      {!caseForTest && <SimpleOption state={state} dispatch={dispatch} />}
+      {!caseForTest && !caseForCombat && (
+        <SimpleOption state={state} dispatch={dispatch} />
+      )}
 
       {caseForTest && <Test state={state} dispatch={dispatch} />}
 

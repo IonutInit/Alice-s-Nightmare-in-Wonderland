@@ -195,7 +195,7 @@
     },
      "209" : {
         "content": "The Tick-Tock Menprepare to meet Alice’s assault with weirdly lurching movements that are strangely out of time with the ceaseless ticking of their internal mechanisms.",
-        "options": [],
+        "options": [314],
         "combat": ["Tick-Tock Men", 0, 7, 7, 2]
     },
      "226" : {
@@ -213,5 +213,9 @@
     ],
         "test": "logic",
         "sample_end": true
+    },
+    "314" : {
+        "content": "Sample text",
+        "Options": []
     }
 }

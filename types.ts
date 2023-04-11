@@ -36,6 +36,7 @@ export type Action =
   | { type: "activate_introduction" }
   | { type: "activate_attributes" }
   | { type: "activate_game" }
+  | { type: "activate_game_lost" }
   | { type: "change_chapter"; payload: number }
   | { type: "clear_options" }
   | {

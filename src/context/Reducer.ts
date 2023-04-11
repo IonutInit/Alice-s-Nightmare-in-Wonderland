@@ -9,6 +9,9 @@ export default function reducer(state: GameState, action: Action) {
       return { ...state, gameState: 2 };
     case "activate_game":
       return { ...state, gameState: 3 };
+    case "activate_game_lost": {
+      return { ...state, gameState: 4 };
+    }
     case "change_chapter":
       return {
         ...state,
