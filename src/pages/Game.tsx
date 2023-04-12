@@ -36,11 +36,13 @@ function Game({ dispatch, state }: Props) {
 
       <ChapterContent state={state} />
 
-      {!caseForTest && !caseForCombat && (
+      {!caseForTest && !caseForCombat && !caseForEndOfSample && (
         <SimpleOption state={state} dispatch={dispatch} />
       )}
 
-      {caseForTest && <Test state={state} dispatch={dispatch} />}
+      {caseForTest && !caseForEndOfSample && (
+        <Test state={state} dispatch={dispatch} />
+      )}
 
       {caseForEndOfSample && <EndOfSample dispatch={dispatch} />}
 

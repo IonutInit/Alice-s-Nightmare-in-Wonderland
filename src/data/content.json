@@ -136,7 +136,7 @@
             [226, "Alice tries talking to the clockwork creations"],
             [169, "Alice attacks the Tick-Tock Men, before they can attack her"],
             [246, "Alice tries to think her way out of such a dangerous situation"],
-            [130, "Alice uses her “Curioser and Curioser” ability"]
+            [130, "Alice uses her “Curioser and Curioser” ability", "curioser"]
 
         ],
         "event": [{

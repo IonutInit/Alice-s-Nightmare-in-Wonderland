@@ -1,4 +1,4 @@
-import { capitalize } from "../lib/textFunctions";
+import { capitalize, describeSpecialAbility } from "../lib/textFunctions";
 
 import { State } from "../../types";
 
@@ -16,7 +16,7 @@ function Console({ state }: State) {
       {attributes.map(([key, value]) => {
         return (
           <p key={key}>
-            {key}: {value}
+            {describeSpecialAbility(key.toString())}: {value}
           </p>
         );
       })}

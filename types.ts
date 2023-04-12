@@ -5,6 +5,8 @@ export type Alice = {
   insanity: number;
   combat: number;
   endurance: number;
+  curioser: number;
+  thePen: number;
 };
 
 type Inventory = {
