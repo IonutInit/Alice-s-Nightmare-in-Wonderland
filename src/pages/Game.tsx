@@ -15,7 +15,7 @@ import getEnemy from "../lib/getEnemy";
 
 import { Props, Content } from "../../types";
 
-const content: Content = importedContent;
+const content: Content = importedContent as Content;
 
 function Game({ dispatch, state }: Props) {
   const chapter = content[state.chapter];
@@ -28,7 +28,7 @@ function Game({ dispatch, state }: Props) {
 
   const caseForEndOfSample = chapter.sample_end;
   const caseForTest = chapter.test;
-  const caseForCombat = chapter.combat;
+  const caseForCombat = chapter.combat && state.enemy.endurance > 0;
 
   return (
     <div>

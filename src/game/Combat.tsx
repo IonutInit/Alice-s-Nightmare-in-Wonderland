@@ -34,8 +34,24 @@ function Combat({ state, dispatch }: Props) {
         });
       }
     };
+
+    const handleWin = () => {
+      if (state.enemy.endurance <= 0) {
+        dispatch({
+          type: "update_log",
+          payload: `Alice won her fight against the ${state.enemy.name}.`,
+        });
+      }
+    };
+
     handleLoss();
-  }, [dispatch, state.alice.endurance]);
+    handleWin();
+  }, [
+    dispatch,
+    state.alice.endurance,
+    state.enemy.endurance,
+    state.enemy.name,
+  ]);
 
   return (
     <div>

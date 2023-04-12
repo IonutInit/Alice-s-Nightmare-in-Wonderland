@@ -14,6 +14,10 @@ function getEnemy(enemy: Combat, dispatch: Dispatch<Action>) {
         initiative: Number(enemy[1]),
       },
     });
+    dispatch({
+      type: "update_log",
+      payload: `The fight with the ${enemy[0].toString()} begins!`,
+    });
   }
 }
 

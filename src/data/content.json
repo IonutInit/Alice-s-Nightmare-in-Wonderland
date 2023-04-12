@@ -194,10 +194,12 @@
         }]
     },
      "209" : {
-        "content": "The Tick-Tock Menprepare to meet Alice’s assault with weirdly lurching movements that are strangely out of time with the ceaseless ticking of their internal mechanisms.",
-        "options": [314],
+        "content": "The Tick-Tock Men prepare to meet Alice’s assault with weirdly lurching movements that are strangely out of time with the ceaseless ticking of their internal mechanisms.",
+        "options": [
+            [314]
+        ],
         "combat": ["Tick-Tock Men", 0, 7, 7, 2]
-    },
+     },
      "226" : {
         "content": "“Good day to you,” says Alice, having been brought up to always be polite, no matter what the occasion. The Tick-Tock Men say nothing, but continue their relentless advance. With time running out, the disappearing seconds marked by the ticking of the mechanical men’s inner workings, Alice is going to have to try something else—and quickly!Good day to you,” says Alice, having been brought up to always be polite, no matter what the occasion. The Tick-Tock Men say nothing, but continue their relentless advance. With time running out, the disappearing seconds marked by the ticking of the mechanical men’s inner workings, Alice is going to have to try something else—and quickly!",
         "options": [
@@ -215,7 +217,10 @@
         "sample_end": true
     },
     "314" : {
-        "content": "Sample text",
-        "Options": []
+        "content": "The mechanical killers dealt with, Alice starts to explore the Hall of Doors.\n ...",
+        "options": [
+            [329]
+        ],
+        "sample_end": true
     }
 }
