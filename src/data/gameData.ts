@@ -2,7 +2,7 @@ import { GameState } from "../../types";
 
 const gameData: GameState = {
   gameState: 3,
-  chapter: 114,
+  chapter: 109,
   alice: {
     agility: 6,
     logic: 6,

@@ -1,43 +1,17 @@
-import { capitalize, describeSpecialAbility } from "../lib/textFunctions";
+import AttributeConsole from "../console/AttributeConsole";
+import InventoryConsole from "../console/InventoryConsole";
+import LogConsole from "../console/LogConsole";
 
 import { State } from "../../types";
 
 function Console({ state }: State) {
-  const attributes = Object.entries(state.alice).map(([key, value]) => [
-    capitalize(key),
-    value,
-  ]);
-
-  const { inventory } = state;
-
   return (
     <div>
+      <AttributeConsole state={state} />
       <p>------------------------------</p>
-      {attributes.map(([key, value]) => {
-        return (
-          <p key={key}>
-            {describeSpecialAbility(key.toString())}: {value}
-          </p>
-        );
-      })}
+      <InventoryConsole state={state} />
       <p>------------------------------</p>
-      <p>Inventory:</p>
-      {inventory.map((item, index) => {
-        return (
-          // eslint-disable-next-line react/no-array-index-key
-          <button type="button" key={index}>
-            {item.item}
-          </button>
-        );
-      })}
-      <p>------------------------------</p>
-      <div>
-        Log:
-        {state.log.map((log, index) => {
-          // eslint-disable-next-line react/no-array-index-key
-          return <p key={index}>{log}</p>;
-        })}
-      </div>
+      <LogConsole state={state} />
       <p>------------------------------</p>
     </div>
   );
