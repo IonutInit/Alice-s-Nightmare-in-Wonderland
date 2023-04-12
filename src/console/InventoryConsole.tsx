@@ -10,7 +10,7 @@ function InventoryConsole({ state }: State) {
         return (
           // eslint-disable-next-line react/no-array-index-key
           <button type="button" key={index}>
-            {item.item}
+            {item.item.name}
           </button>
         );
       })}

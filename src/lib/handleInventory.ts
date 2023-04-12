@@ -1,18 +1,13 @@
 import { Dispatch } from "react";
 import { Action } from "../../types";
 
-function addToInventory(
-  dispatch: Dispatch<Action>,
-  inventory: string,
-  quantity: number,
-  uses: number
-) {
+import inventoryTemplate from "../data/inventory";
+
+function addToInventory(dispatch: Dispatch<Action>, inventory: string) {
   dispatch({
     type: "add_to_inventory",
     payload: {
-      item: inventory,
-      quantity,
-      uses,
+      item: inventoryTemplate[inventory],
     },
   });
 }
@@ -29,7 +24,7 @@ export default function handleInventory(
   dispatch: Dispatch<Action>
 ) {
   if (inventory !== undefined) {
-    addToInventory(dispatch, inventory, 1, 1);
+    addToInventory(dispatch, inventory);
     updateLog(dispatch, inventory);
   }
 }
