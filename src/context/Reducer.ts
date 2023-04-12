@@ -78,6 +78,11 @@ export default function reducer(state: GameState, action: Action) {
       }
     }
     // eslint-disable-next-line no-fallthrough
+    case "toogle_combat_mode":
+      return {
+        ...state,
+        combatMode: action.payload,
+      };
     case "reset":
       return gameData;
     default:

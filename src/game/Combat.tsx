@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import fight from "../lib/fight";
+import { handleWin, handleLoss } from "../lib/handleFightOutcome";
 
 import { Props } from "../../types";
 
@@ -27,25 +28,8 @@ function Combat({ state, dispatch }: Props) {
   };
 
   useEffect(() => {
-    const handleLoss = () => {
-      if (state.alice.endurance <= 0) {
-        dispatch({
-          type: "activate_game_lost",
-        });
-      }
-    };
-
-    const handleWin = () => {
-      if (state.enemy.endurance <= 0) {
-        dispatch({
-          type: "update_log",
-          payload: `Alice won her fight against the ${state.enemy.name}.`,
-        });
-      }
-    };
-
-    handleLoss();
-    handleWin();
+    handleWin(state.enemy.name, state.enemy.endurance, dispatch);
+    handleLoss(state.alice.endurance, dispatch);
   }, [
     dispatch,
     state.alice.endurance,

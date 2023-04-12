@@ -28,7 +28,7 @@ function Game({ dispatch, state }: Props) {
 
   const caseForEndOfSample = chapter.sample_end;
   const caseForTest = chapter.test;
-  const caseForCombat = chapter.combat && state.enemy.endurance > 0;
+  const caseForCombat = state.combatMode;
 
   return (
     <div>

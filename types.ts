@@ -29,6 +29,7 @@ export type GameState = {
   alice: Alice;
   inventory: Inventory;
   log: Log;
+  combatMode: boolean;
   enemy: Enemy;
 };
 
@@ -56,6 +57,10 @@ export type Action =
         endurance: number;
         initiative: number;
       };
+    }
+  | {
+      type: "toogle_combat_mode";
+      payload: boolean;
     }
   | {
       type: "take_hit";

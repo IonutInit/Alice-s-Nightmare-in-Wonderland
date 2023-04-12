@@ -1,4 +1,6 @@
-const gameData = {
+import { GameState } from "../../types";
+
+const gameData: GameState = {
   gameState: 3,
   chapter: 42,
   alice: {
@@ -10,6 +12,7 @@ const gameData = {
   },
   inventory: [],
   log: [],
+  combatMode: false,
   enemy: {
     name: "",
     combat: 0,

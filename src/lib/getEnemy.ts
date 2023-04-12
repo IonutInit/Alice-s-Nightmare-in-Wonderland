@@ -15,6 +15,10 @@ function getEnemy(enemy: Combat, dispatch: Dispatch<Action>) {
       },
     });
     dispatch({
+      type: "toogle_combat_mode",
+      payload: true,
+    });
+    dispatch({
       type: "update_log",
       payload: `The fight with the ${enemy[0].toString()} begins!`,
     });
