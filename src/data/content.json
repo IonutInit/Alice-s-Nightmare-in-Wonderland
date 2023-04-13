@@ -153,7 +153,7 @@
         "sample_end": true
      },
      "133" : {
-        "content": "Alice manages to open the cupboard door with one hand and reach inside with the other, pulling out a large pair of scissors.\n (Scissors have been added to Alice’s inventory. If she ever finds herself in combat with one of the strange denizens that inhabit Wonderland she may use the Scissors as a weapon, causing 3 points of damage to her opponent’s Endurance score with every successful strike rather than the usual 2.",
+        "content": "Alice manages to open the cupboard door with one hand and reach inside with the other, pulling out a large pair of scissors.",
         "options": [
             [156]
         ],
@@ -174,11 +174,11 @@
         ]
     },
      "178" : {
-        "content": "Flinging out a hand, Alice snatches a jar from the dresser shelf. Written on the label stuck to the glass in a spidery hand are the words “Orange Marmalade”, and the jar is full.\n (The jar of marmalade has been added to Alice’s adventure sheet. It contains enough for four portions. Alice may choose to eat a portion of the marmalade at any time, apart from when she is in the middle of combat, and will replenish up to 4 Endurance point points by doing so.)",
+        "content": "Flinging out a hand, Alice snatches a jar from the dresser shelf. Written on the label stuck to the glass in a spidery hand are the words “Orange Marmalade”, and the jar is full.",
         "options": [
             [12]
         ],
-        "inventory": "Marmalade Jar"
+        "inventory": "marmalade jar"
     },
      "191" : {
         "content": "Alice is brought to her senses again as she lands with a soft thud atop a pile of dry leaves. Lying on her back among the leaves, she finds herself staring up at what appears to be a circular well shaft.\n She feels like she barely has her wits about her; the blow to the head she received was clearly much worse than she first thought and had left her feeling quite dizzy.",

@@ -19,11 +19,13 @@ export type Enemy = {
   initiative: number;
 };
 
-type InventoryItem = {
+export type InventoryItem = {
+  id: string;
   name: string;
   type: string;
   event?: Event;
   uses?: number;
+  value?: number;
 };
 
 export type Inventory = InventoryItem[];

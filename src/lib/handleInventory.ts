@@ -1,12 +1,16 @@
 import { Dispatch } from "react";
-import { Action } from "../../types";
+
+import { v4 as uuidv4 } from "uuid";
+
+import { Action, InventoryItem } from "../../types";
 
 import inventoryTemplate from "../data/inventory";
 
 function addToInventory(dispatch: Dispatch<Action>, inventory: string) {
+  const id = uuidv4();
   dispatch({
     type: "add_to_inventory",
-    payload: inventoryTemplate[inventory],
+    payload: { id, ...inventoryTemplate[inventory] } as InventoryItem,
   });
 }
 

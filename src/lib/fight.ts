@@ -2,7 +2,7 @@ import { Dispatch } from "react";
 
 import { rollDie, sumDie } from "./rollDie";
 
-import { Action } from "../../types";
+import { Action, Inventory } from "../../types";
 
 type FightResult = [
   currentInitiative: string,
@@ -15,6 +15,7 @@ type FightResult = [
 
 function fight(
   aliceCombatStats: number,
+  aliceInventory: Inventory,
   enemyCombatStats: number,
   enemyName: string,
   startingInitiative: number,
@@ -23,6 +24,7 @@ function fight(
   let currentInitiative = "";
   let aliceInitative = 0;
   let enemyInitiative = 0;
+  let aliceBonus = 0;
   let payload = 0;
   let gameResult = "";
 
@@ -32,11 +34,18 @@ function fight(
     enemyInitiative = 1;
   }
 
+  aliceInventory.map((item) => {
+    if (item.type === "combat") {
+      aliceBonus += item.value!;
+    }
+    return null;
+  });
+
   const aliceRoll = rollDie(2);
   const enemyRoll = rollDie(2);
 
   const aliceCombatRating =
-    sumDie(aliceRoll) + aliceCombatStats + aliceInitative;
+    sumDie(aliceRoll) + aliceCombatStats + aliceInitative + aliceBonus;
   const enemyCombatRating =
     sumDie(enemyRoll) + enemyCombatStats + enemyInitiative;
 

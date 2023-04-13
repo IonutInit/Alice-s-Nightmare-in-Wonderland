@@ -17,7 +17,14 @@ function Combat({ state, dispatch }: Props) {
       aliceCombatRating,
       enemyCombatRating,
       gameResult,
-    ] = fight(state.alice.combat, combat, name, initiative, dispatch);
+    ] = fight(
+      state.alice.combat,
+      state.inventory,
+      combat,
+      name,
+      initiative,
+      dispatch
+    );
 
     setGameLog(() => [
       `${currentInitiative}`,

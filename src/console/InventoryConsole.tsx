@@ -1,7 +1,7 @@
 import { Props } from "../../types";
 
 function InventoryConsole({ state, dispatch }: Props) {
-  const { inventory } = state;
+  const { inventory, combatMode } = state;
 
   const itemDisplay = (name: string, uses?: number) => {
     let useCount = "";
@@ -31,16 +31,23 @@ function InventoryConsole({ state, dispatch }: Props) {
     <>
       <p>Inventory</p>
       {inventory.map((item, index) => {
-        return (
-          <button
-            type="button"
-            // eslint-disable-next-line react/no-array-index-key
-            key={index}
-            onClick={() => handleItemUses(item.uses!, item.name, item.event!)}
-          >
-            {itemDisplay(item.name, item.uses)}
-          </button>
-        );
+        if (item.uses! > 0 || item.uses === undefined) {
+          return (
+            <button
+              type="button"
+              disabled={
+                item.uses === undefined ||
+                (item.uses !== undefined && combatMode)
+              }
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
+              onClick={() => handleItemUses(item.uses!, item.id, item.event!)}
+            >
+              {itemDisplay(item.name, item.uses)}
+            </button>
+          );
+        }
+        return null;
       })}
     </>
   );

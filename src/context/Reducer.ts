@@ -87,7 +87,7 @@ export default function reducer(state: GameState, action: Action) {
       return {
         ...state,
         inventory: state.inventory.map((inventoryItem) => {
-          if (inventoryItem.name === action.payload) {
+          if (inventoryItem.id === action.payload) {
             let { uses } = { ...inventoryItem };
             uses! -= 1;
             return { ...inventoryItem, uses };
