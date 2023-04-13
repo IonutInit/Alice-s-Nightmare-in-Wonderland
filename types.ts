@@ -38,6 +38,7 @@ export type GameState = {
   log: Log;
   combatMode: boolean;
   enemy: Enemy;
+  options?: (number | string)[]; // added to satisfy output type of reducer
 };
 
 export type Action =

@@ -1,7 +1,7 @@
-import { GameState, Action } from "../../types";
+import { GameState, Action, Inventory } from "../../types";
 import gameData from "../data/gameData";
 
-export default function reducer(state: GameState, action: Action) {
+export default function reducer(state: GameState, action: Action): GameState {
   switch (action.type) {
     case "activate_introduction":
       return { ...state, gameState: 1 };
@@ -32,7 +32,7 @@ export default function reducer(state: GameState, action: Action) {
     case "add_to_inventory":
       return {
         ...state,
-        inventory: [...state.inventory, action.payload],
+        inventory: [...state.inventory, action.payload] as Inventory,
       };
     case "update_log":
       return {
@@ -81,7 +81,7 @@ export default function reducer(state: GameState, action: Action) {
     case "toogle_combat_mode":
       return {
         ...state,
-        combatMode: action.payload,
+        combatMode: action.payload as boolean,
       };
     case "use_item":
       return {

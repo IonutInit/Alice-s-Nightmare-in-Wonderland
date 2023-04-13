@@ -30,7 +30,7 @@ function InventoryConsole({ state, dispatch }: Props) {
   return (
     <>
       <p>Inventory</p>
-      {inventory.map((item, index) => {
+      {inventory.map((item) => {
         if (item.uses! > 0 || item.uses === undefined) {
           return (
             <button
@@ -39,8 +39,7 @@ function InventoryConsole({ state, dispatch }: Props) {
                 item.uses === undefined ||
                 (item.uses !== undefined && combatMode)
               }
-              // eslint-disable-next-line react/no-array-index-key
-              key={index}
+              key={item.id}
               onClick={() => handleItemUses(item.uses!, item.id, item.event!)}
             >
               {itemDisplay(item.name, item.uses)}
