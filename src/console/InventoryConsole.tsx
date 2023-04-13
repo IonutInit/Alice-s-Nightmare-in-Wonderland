@@ -10,7 +10,11 @@ function InventoryConsole({ state, dispatch }: Props) {
     return `${name} ${useCount}`;
   };
 
-  const handleItemUses = (uses: number, name: string, event) => {
+  const handleItemUses = (
+    uses: number,
+    name: string,
+    event: { name: string; change: number }[]
+  ) => {
     if (uses !== undefined) {
       dispatch({
         type: "modify_attribute",
@@ -32,11 +36,9 @@ function InventoryConsole({ state, dispatch }: Props) {
             type="button"
             // eslint-disable-next-line react/no-array-index-key
             key={index}
-            onClick={() =>
-              handleItemUses(item.item.uses!, item.item.name, item.item.event)
-            }
+            onClick={() => handleItemUses(item.uses!, item.name, item.event!)}
           >
-            {itemDisplay(item.item.name, item.item.uses)}
+            {itemDisplay(item.name, item.uses)}
           </button>
         );
       })}

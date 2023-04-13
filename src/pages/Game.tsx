@@ -20,8 +20,6 @@ const content: Content = importedContent as Content;
 function Game({ dispatch, state }: Props) {
   const chapter = content[state.chapter];
 
-  console.log(state)
-
   useEffect(() => {
     handleEvent(chapter.event, dispatch);
     handleInventory(chapter.inventory!, dispatch); // did not used undefined in types, as I did with event, as it creates a whole series of problems

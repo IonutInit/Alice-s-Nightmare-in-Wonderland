@@ -6,9 +6,7 @@ import inventoryTemplate from "../data/inventory";
 function addToInventory(dispatch: Dispatch<Action>, inventory: string) {
   dispatch({
     type: "add_to_inventory",
-    payload: {
-      item: inventoryTemplate[inventory],
-    },
+    payload: inventoryTemplate[inventory],
   });
 }
 

@@ -20,12 +20,10 @@ export type Enemy = {
 };
 
 type InventoryItem = {
-  item: {
-    name: string;
-    type: string;
-    event?: Event;
-    uses?: number;
-  };
+  name: string;
+  type: string;
+  event?: Event;
+  uses?: number;
 };
 
 export type Inventory = InventoryItem[];
@@ -54,7 +52,12 @@ export type Action =
   | { type: "update_log"; payload: string }
   | {
       type: "add_to_inventory";
-      payload: InventoryItem;
+      payload: {
+        name: string;
+        type: string;
+        event?: Event;
+        uses?: number;
+      };
     }
   | {
       type: "get_enemy";
