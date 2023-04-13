@@ -73,6 +73,10 @@ export type Action =
       type: "take_hit";
       payload: number;
     }
+  | {
+      type: "use_item";
+      payload: string;
+    }
   | { type: "reset" };
 
 export type Dispatch = {

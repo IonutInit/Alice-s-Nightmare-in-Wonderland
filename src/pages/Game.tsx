@@ -20,6 +20,8 @@ const content: Content = importedContent as Content;
 function Game({ dispatch, state }: Props) {
   const chapter = content[state.chapter];
 
+  console.log(state)
+
   useEffect(() => {
     handleEvent(chapter.event, dispatch);
     handleInventory(chapter.inventory!, dispatch); // did not used undefined in types, as I did with event, as it creates a whole series of problems
@@ -32,7 +34,7 @@ function Game({ dispatch, state }: Props) {
 
   return (
     <div>
-      <Console state={state} />
+      <Console state={state} dispatch={dispatch} />
 
       <ChapterContent state={state} />
 

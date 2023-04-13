@@ -83,6 +83,18 @@ export default function reducer(state: GameState, action: Action) {
         ...state,
         combatMode: action.payload,
       };
+    case "use_item":
+      return {
+        ...state,
+        inventory: state.inventory.map((inventoryItem) => {
+          if (inventoryItem.item.name === action.payload) {
+            const item = { ...inventoryItem.item };
+            item.uses! -= 1;
+            return { ...inventoryItem, item };
+          }
+          return inventoryItem;
+        }),
+      };
     case "reset":
       return gameData;
     default:
