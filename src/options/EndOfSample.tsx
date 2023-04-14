@@ -1,8 +1,11 @@
+import { useContext } from "react";
+import { GameContext } from "../context/GameContext";
+
 import OptionsButton from "../components/OptionsButton";
 
-import { Dispatch } from "../../types";
+function EndOfSample() {
+  const { dispatch } = useContext(GameContext);
 
-function EndOfSample({ dispatch }: Dispatch) {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="h-[1px] w-full bg-slate-800 mb-3" />

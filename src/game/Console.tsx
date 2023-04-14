@@ -1,11 +1,14 @@
+import { useContext } from "react";
+import { GameContext } from "../context/GameContext";
+
 import AttributeConsole from "../console/AttributeConsole";
 import InventoryConsole from "../console/InventoryConsole";
 import LogConsole from "../console/LogConsole";
 import Divider from "../components/Divider";
 
-import { Props } from "../../types";
+function Console() {
+  const { state, dispatch } = useContext(GameContext);
 
-function Console({ state, dispatch }: Props) {
   return (
     <div className="fixed w-[55%] bg-gray-200 z-1">
       <AttributeConsole state={state} />

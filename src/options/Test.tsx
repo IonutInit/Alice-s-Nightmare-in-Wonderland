@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { GameContext } from "../context/GameContext";
 
 import OptionsButton from "../components/OptionsButton";
 
@@ -8,11 +9,13 @@ import { spellArticle } from "../lib/textFunctions";
 import handleTest from "../lib/handleTest";
 import { carryOn, carryOnTextDisplay } from "../lib/carryOn";
 
-import { Props, Content, Attribute } from "../../types";
+import { Content, Attribute } from "../../types";
 
 const content: Content = importedContent;
 
-function Test({ state, dispatch }: Props) {
+function Test() {
+  const { state, dispatch } = useContext(GameContext);
+
   const [testTaken, setTestTaken] = useState({
     isTaken: false,
     outcome: false,

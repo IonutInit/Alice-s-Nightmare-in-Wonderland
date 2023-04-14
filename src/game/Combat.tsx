@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { GameContext } from "../context/GameContext";
 
 import fight from "../lib/fight";
 import { handleWin, handleLoss } from "../lib/handleFightOutcome";
 
 import OptionsButton from "../components/OptionsButton";
 
-import { Props } from "../../types";
+function Combat() {
+  const { state, dispatch } = useContext(GameContext);
 
-function Combat({ state, dispatch }: Props) {
   const [gameLog, setGameLog] = useState<string[]>([]);
   const { name, combat, endurance, initiative } = state.enemy;
 

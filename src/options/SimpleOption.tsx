@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { GameContext } from "../context/GameContext";
 
 import OptionsButton from "../components/OptionsButton";
 
@@ -6,9 +7,11 @@ import content from "../data/content.json";
 
 import disableSpecialAbilityButton from "../lib/specialAbilities";
 
-import { Props, Content } from "../../types";
+import { Content } from "../../types";
 
-const SimpleOption = ({ state, dispatch }: Props) => {
+const SimpleOption = () => {
+  const { state, dispatch } = useContext(GameContext);
+
   const typedContent: Content = content;
 
   function handleClick(newChapter: number, specialAbility?: string) {

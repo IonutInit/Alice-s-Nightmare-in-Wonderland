@@ -1,7 +1,5 @@
-import { createContext, useReducer, Dispatch, useMemo } from "react";
+import { createContext, Dispatch, useMemo } from "react";
 import { GameState, Action } from "../../types";
-import reducer from "./Reducer";
-import gameData from "../data/gameData";
 
 type GameContextType = {
   state: GameState;
@@ -9,17 +7,19 @@ type GameContextType = {
 };
 
 export const GameContext = createContext<GameContextType>({
-  state: gameData,
+  state: {} as GameState,
   dispatch: () => null,
 });
 
 export const GameContextProvider = ({
+  state,
+  dispatch,
   children,
 }: {
+  state: GameState;
+  dispatch: Dispatch<Action>;
   children: React.ReactNode;
 }) => {
-  const [state, dispatch] = useReducer(reducer, gameData);
-
   const contextValue = useMemo(() => {
     return { state, dispatch };
   }, [state, dispatch]);

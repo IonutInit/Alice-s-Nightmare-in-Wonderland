@@ -1,12 +1,10 @@
-// import { useContext } from "react";
-// import { GameContext } from "../context/GameContext";
+import { useContext } from "react";
+import { GameContext } from "../context/GameContext";
 
 import OptionsButton from "../components/OptionsButton";
 
-import { Dispatch } from "../../types";
-
-function Introduction({ dispatch }: Dispatch) {
-  // const { dispatch } = useContext(GameContext);
+function Introduction() {
+  const { dispatch } = useContext(GameContext);
   return (
     <div>
       Hello Introduction

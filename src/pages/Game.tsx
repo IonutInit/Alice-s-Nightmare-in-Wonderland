@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { GameContext } from "../context/GameContext";
 
 import Console from "../game/Console";
 import ChapterContent from "../game/ChapterContent";
@@ -14,11 +15,12 @@ import handleEvent from "../lib/handleEvent";
 import handleInventory from "../lib/handleInventory";
 import getEnemy from "../lib/getEnemy";
 
-import { Props, Content } from "../../types";
+import { Content } from "../../types";
 
 const content: Content = importedContent as Content;
 
-function Game({ dispatch, state }: Props) {
+function Game() {
+  const { state, dispatch } = useContext(GameContext);
   const chapter = content[state.chapter];
 
   useEffect(() => {
@@ -33,24 +35,22 @@ function Game({ dispatch, state }: Props) {
 
   return (
     <div>
-      <Console state={state} dispatch={dispatch} />
+      <Console />
 
-      <ChapterContent state={state} />
+      <ChapterContent />
 
       <div>
         <Divider />
         <div className="py-3" />
         {!caseForTest && !caseForCombat && !caseForEndOfSample && (
-          <SimpleOption state={state} dispatch={dispatch} />
+          <SimpleOption />
         )}
 
-        {caseForTest && !caseForEndOfSample && (
-          <Test state={state} dispatch={dispatch} />
-        )}
+        {caseForTest && !caseForEndOfSample && <Test />}
 
-        {caseForEndOfSample && <EndOfSample dispatch={dispatch} />}
+        {caseForEndOfSample && <EndOfSample />}
 
-        {caseForCombat && <Combat state={state} dispatch={dispatch} />}
+        {caseForCombat && <Combat />}
       </div>
     </div>
   );

@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GameContext } from "../context/GameContext";
 
 import importedContent from "../data/content.json";
 
-import { Content, State } from "../../types";
+import { Content } from "../../types";
 
 const content: Content = importedContent;
 
-function ChapterContent({ state }: State) {
-  const { chapter } = state;
+function ChapterContent() {
+  const {
+    state: { chapter },
+  } = useContext(GameContext);
 
   return (
     <div className="pt-[250px] h-[700px] overflow-scroll">

@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { GameContext } from "../context/GameContext";
 
-import { Props } from "../../types";
-
-function Attributes({ state, dispatch }: Props) {
+function Attributes() {
+  const { state, dispatch } = useContext(GameContext);
   const { agility, logic, combat, endurance } = state.alice;
   const [initialValue] = useState(state.alice);
   const attributes = Object.entries({ agility, logic, combat, endurance });
