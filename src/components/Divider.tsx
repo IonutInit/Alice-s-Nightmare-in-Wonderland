@@ -8,8 +8,8 @@ function Divider({ height, color }: DividerType) {
 }
 
 Divider.defaultProps = {
-  height: "2",
-  color: "slate-300",
+  height: "h-2",
+  color: "slate-500",
 };
 
 export default Divider;
