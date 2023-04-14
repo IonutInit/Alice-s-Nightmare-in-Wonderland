@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+import OptionsButton from "../components/OptionsButton";
+
 import content from "../data/content.json";
 
 import disableSpecialAbilityButton from "../lib/specialAbilities";
@@ -29,18 +31,17 @@ const SimpleOption = ({ state, dispatch }: Props) => {
   }, [dispatch]);
 
   return (
-    <>
+    <div className="flex flex-col justify-center items-center">
       {typedContent[state.chapter].options.map((option) => (
-        <button
-          type="button"
+        <OptionsButton
           key={option[0]}
           disabled={disableSpecialAbilityButton(option, state.alice)}
           onClick={() => handleClick(Number(option[0]), option[2]?.toString())}
         >
           {option[1] === undefined ? "Move on" : option[1]}
-        </button>
+        </OptionsButton>
       ))}
-    </>
+    </div>
   );
 };
 

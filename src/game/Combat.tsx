@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import fight from "../lib/fight";
 import { handleWin, handleLoss } from "../lib/handleFightOutcome";
 
+import OptionsButton from "../components/OptionsButton";
+
 import { Props } from "../../types";
 
 function Combat({ state, dispatch }: Props) {
@@ -44,18 +46,49 @@ function Combat({ state, dispatch }: Props) {
     state.enemy.name,
   ]);
 
+  const attributeStyle = "bg-slate-600";
+
   return (
     <div>
-      <p>{name}</p>
-      <p>Combat: {combat}</p>
-      <p>Endurance: {endurance}</p>
-      <button type="button" onClick={() => handleFight()}>
-        FIGHT!
-      </button>
-      {gameLog.map((log, index) => {
-        // eslint-disable-next-line react/no-array-index-key
-        return <p key={index}>{log}</p>;
-      })}
+      <div className="flex flex-col justify-center items-center py-2 border-t-2 border-b-2 border-gray-500 mb-6">
+        <p>{name}</p>
+        <div className="h-[2px] w-2/3 bg-slate-400 my-2" />
+        <p>
+          Combat:{"  "}
+          <span
+            className={`inline-flex w-[25px] h-[25px] rounded-full ${attributeStyle} text-white items-center justify-center`}
+          >
+            {combat}
+          </span>
+        </p>
+        <p>
+          Endurance:{"  "}
+          <span
+            className={`inline-flex w-[25px] h-[25px] rounded-full ${attributeStyle} text-white items-center justify-center`}
+          >
+            {endurance}
+          </span>
+        </p>
+      </div>
+
+      <div className="flex flex-col justify-center items-center">
+        <OptionsButton
+          onClick={handleFight}
+          color="bg-amber-600"
+          hoverColor="bg-amber-700"
+        >
+          FIGHT!
+        </OptionsButton>
+      </div>
+
+      {gameLog.length !== 0 && (
+        <div className="flex flex-col justify-center items-center py-2 border-t-2 border-b-2 border-gray-500 mb-6 text-sm mt-5">
+          {gameLog.map((log, index) => {
+            // eslint-disable-next-line react/no-array-index-key
+            return <p key={index}>{log}</p>;
+          })}
+        </div>
+      )}
     </div>
   );
 }

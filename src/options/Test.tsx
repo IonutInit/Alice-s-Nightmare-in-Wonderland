@@ -1,10 +1,12 @@
 import { useState } from "react";
 
+import OptionsButton from "../components/OptionsButton";
+
 import importedContent from "../data/content.json";
 
 import { spellArticle } from "../lib/textFunctions";
-import { rollResults } from "../lib/rollDie";
-import resolveTest from "../lib/resolveTest";
+import handleTest from "../lib/handleTest";
+import { carryOn, carryOnTextDisplay } from "../lib/carryOn";
 
 import { Props, Content, Attribute } from "../../types";
 
@@ -21,64 +23,35 @@ function Test({ state, dispatch }: Props) {
   const testAttribute: Attribute = content[chapter].test as Attribute;
   const testCase = state.alice[`${testAttribute}`];
 
-  const handleTest = () => {
-    const [outcome, dice] = resolveTest(testAttribute ?? "", testCase);
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    outcome
-      ? setNewChapter(Number(candidateChapters[0]))
-      : setNewChapter(Number(candidateChapters[1]));
-    setTestTaken({
-      isTaken: true,
-      outcome: outcome !== undefined ? outcome : false,
-    });
-    dispatch({
-      type: "update_log",
-      payload: `${rollResults(dice ?? [])} 
-      ${
-        testAttribute !== "die"
-          ? `${outcome ? "That's good" : "Could have been better"}.`
-          : ""
-      }`,
-    });
-  };
-
-  const carryOnTextDisplay = () => {
-    let result = "";
-    if (testAttribute !== "die") {
-      result = `The test resolved ${
-        !testTaken.outcome ? "un" : ""
-      }favourably. Carry on to ${newChapter}`;
-    }
-    if (testAttribute === "die") {
-      result = `The number was ${
-        testTaken.outcome ? "odd" : "even"
-      }. Go this way!`;
-    }
-    return result;
-  };
-
-  const carryOn = () => {
-    dispatch({
-      type: "change_chapter",
-      payload: newChapter,
-    });
-  };
-
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center">
       {!testTaken.isTaken && (
-        <button type="button" onClick={() => handleTest()}>
+        <OptionsButton
+          onClick={() =>
+            handleTest(
+              candidateChapters,
+              setNewChapter,
+              setTestTaken,
+              testAttribute,
+              testCase,
+              dispatch
+            )
+          }
+          color="bg-orange-800"
+          hoverColor="bg-orange-900"
+        >
           Take {spellArticle(testAttribute ?? "")} test
-        </button>
+        </OptionsButton>
       )}
 
       {testTaken.isTaken && (
-        <button type="button" onClick={carryOn}>
-          {/* {`The test resolved ${
-            !testTaken.outcome ? "un" : ""
-          }favourably. Carry on to ${newChapter}`} */}
-          {carryOnTextDisplay()}
-        </button>
+        <OptionsButton
+          onClick={() => carryOn(dispatch, newChapter)}
+          color={testTaken.outcome ? "bg-lime-700" : "bg-orange-800"}
+          hoverColor={testTaken.outcome ? "bg-lime-800" : "bg-orange-900"}
+        >
+          {carryOnTextDisplay(testAttribute, newChapter, testTaken)}
+        </OptionsButton>
       )}
     </div>
   );

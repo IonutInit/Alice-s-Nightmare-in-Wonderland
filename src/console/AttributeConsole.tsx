@@ -9,15 +9,15 @@ function AttributeConsole({ state }: State) {
   ]);
 
   return (
-    <>
+    <div className="flex flex-wrap justify-end pb-3">
       {attributes.map(([key, value]) => {
         return (
-          <p key={key}>
+          <p className="w-1/3 text-sm" key={key}>
             {describeSpecialAbility(key.toString())}: {value}
           </p>
         );
       })}
-    </>
+    </div>
   );
 }
 

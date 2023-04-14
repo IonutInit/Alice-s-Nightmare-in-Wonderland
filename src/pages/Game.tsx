@@ -6,6 +6,7 @@ import SimpleOption from "../options/SimpleOption";
 import Test from "../options/Test";
 import Combat from "../game/Combat";
 import EndOfSample from "../options/EndOfSample";
+import Divider from "../components/Divider";
 
 import importedContent from "../data/content.json";
 
@@ -36,17 +37,21 @@ function Game({ dispatch, state }: Props) {
 
       <ChapterContent state={state} />
 
-      {!caseForTest && !caseForCombat && !caseForEndOfSample && (
-        <SimpleOption state={state} dispatch={dispatch} />
-      )}
+      <div>
+        <Divider />
+        <div className="py-3" />
+        {!caseForTest && !caseForCombat && !caseForEndOfSample && (
+          <SimpleOption state={state} dispatch={dispatch} />
+        )}
 
-      {caseForTest && !caseForEndOfSample && (
-        <Test state={state} dispatch={dispatch} />
-      )}
+        {caseForTest && !caseForEndOfSample && (
+          <Test state={state} dispatch={dispatch} />
+        )}
 
-      {caseForEndOfSample && <EndOfSample dispatch={dispatch} />}
+        {caseForEndOfSample && <EndOfSample dispatch={dispatch} />}
 
-      {caseForCombat && <Combat state={state} dispatch={dispatch} />}
+        {caseForCombat && <Combat state={state} dispatch={dispatch} />}
+      </div>
     </div>
   );
 }

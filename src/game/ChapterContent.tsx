@@ -10,7 +10,7 @@ function ChapterContent({ state }: State) {
   const { chapter } = state;
 
   return (
-    <div>
+    <div className="pt-[250px] h-[700px] overflow-scroll">
       {content[chapter].content
         .split("\n")
         .map((line: string, index: number) => (

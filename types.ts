@@ -1,3 +1,5 @@
+export type StringNumberArray = (string | number)[];
+
 export type Alice = {
   [key: string]: number;
   agility: number;
