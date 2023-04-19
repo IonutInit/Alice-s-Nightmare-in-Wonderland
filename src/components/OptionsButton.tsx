@@ -17,7 +17,9 @@ function OptionsButton({
 }: OptionsButtonType) {
   return (
     <button
-      className={`w-3/4 h-16 ${color} hover:${hoverColor} text-white py-2 px-4 my-2 rounded font-medium`}
+      className={`w-3/4 h-16 ${color} hover:${hoverColor} text-white py-2 px-4 my-2 rounded font-medium ${
+        disabled ? "bg-gray-300 hover:bg-gray-400 cursor-not-allowed" : ""
+      }`}
       type="button"
       disabled={disabled}
       onClick={onClick}

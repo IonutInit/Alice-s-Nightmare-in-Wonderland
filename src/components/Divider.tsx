@@ -4,11 +4,11 @@ type DividerType = {
 };
 
 function Divider({ height, color }: DividerType) {
-  return <div className={`h-${height} bg-${color}`} />;
+  return <div className={`h-${height} bg-${color} z-10`} />;
 }
 
 Divider.defaultProps = {
-  height: "h-2",
+  height: "2",
   color: "slate-500",
 };
 
