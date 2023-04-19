@@ -15,7 +15,7 @@ function App() {
 
   return (
     <GameContextProvider state={state} dispatch={dispatch}>
-      <div className="h-screen flex justify-center bg-gray-400">
+      <div className="min-h-screen min-w-[800px] flex justify-center bg-gray-400">
         <div className="w-2/3 bg-gray-200 px-20 py-10">
           {state.gameState === 0 && <Welcome />}
           {state.gameState === 1 && <Introduction />}
