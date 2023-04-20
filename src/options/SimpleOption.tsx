@@ -34,13 +34,6 @@ const SimpleOption = () => {
     });
   }, [dispatch]);
 
-  // function customButtonMessage(log: string[]) {
-  //   if (log[log.length - 1]?.indexOf("Alice won") === 0) {
-  //     return `${log[log.length - 1]} Time to move on!`;
-  //   }
-  //   return "Move on";
-  // }
-
   return (
     <div className="flex flex-col justify-center items-center">
       {typedContent[state.chapter].options.map((option) => (

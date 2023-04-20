@@ -5,6 +5,7 @@ import useGameContext from "../context/useGameContext";
 
 import RoundedButton from "../components/RoundedButton";
 import OptionsButton from "../components/OptionsButton";
+import Underline from "../components/Underline";
 
 import extraContent from "../data/extraContent.json";
 
@@ -28,7 +29,8 @@ function Attributes() {
   return (
     <div className="flex flex-col items-center pt-10">
       <h1 className="text-3xl pb-5">SET ATTRIBUTES</h1>
-      <div className="h-1 w-full bg-slate-600 mb-10" />
+      <Underline />
+      {/* <div className="h-1 w-full bg-slate-600 mb-10" /> */}
       <div className="items-left">
         {attributes.map(([attribute, value]) => (
           <div key={attribute} className="flex">

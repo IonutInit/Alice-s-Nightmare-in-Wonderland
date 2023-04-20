@@ -179,7 +179,7 @@
      "169" : {
         "content": "Her heart pounding in her chest, Alice runs at the sinister Tick-Tock Men as the mechanical horror scraped their gleaming metal claws together, sending sparks flying from the keenly-honed blades.",
         "options": [
-            [189, "Alice should make use of her “The Pen is Mightier” ability"],
+            [189, "Alice should make use of her “The Pen is Mightier” ability", "thePen"],
             [209, "Alice shouldn’t do anything"]
         ]
     },

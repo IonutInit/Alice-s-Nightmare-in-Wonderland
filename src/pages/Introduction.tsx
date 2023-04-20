@@ -4,6 +4,7 @@ import useGameContext from "../context/useGameContext";
 
 import OptionsButton from "../components/OptionsButton";
 import Accordion from "../components/Accordion";
+import Underline from "../components/Underline";
 
 import extraContent from "../data/extraContent.json";
 
@@ -25,6 +26,7 @@ function Introduction() {
   return (
     <div>
       <h1 className="text-4xl text-center py-5">Welcome to Wonderland</h1>
+      <Underline />
 
       <h3 className="text-2xl text-center pb-3">
         {parse(extraContent.intro[0].quote)}
@@ -35,7 +37,7 @@ function Introduction() {
       <Instructions />
       <br />
 
-      <div className="flex-container">
+      <div className="flex flex-col items-center">
         <OptionsButton
           onClick={() => {
             dispatch({

@@ -16,7 +16,7 @@ export default function reducer(state: GameState, action: Action): GameState {
       return {
         ...state,
         chapter: action.payload,
-        log: [...state.log, `Chapter ${action.payload}.`],
+        log: [...state.log, `You are on chapter ${action.payload}.`],
       };
     case "clear_options":
       return { ...state, options: [] };

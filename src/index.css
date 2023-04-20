@@ -5,19 +5,3 @@
 .overflow-scroll::-webkit-scrollbar {
   display: none;
 }
-
-.footer {
-    position: fixed;
-    bottom: 5%;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.flex-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
