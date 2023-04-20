@@ -17,7 +17,7 @@ function addToInventory(dispatch: Dispatch<Action>, inventory: string) {
 function updateLog(dispatch: Dispatch<Action>, inventory: string) {
   dispatch({
     type: "update_log",
-    payload: `You got ${inventory}!`,
+    payload: `Alice got ${inventory}!`,
   });
 }
 

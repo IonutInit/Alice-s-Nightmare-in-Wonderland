@@ -22,7 +22,7 @@ function updateLog(
 ) {
   const whatHappened = amount > 0 && attribute !== "insanity" ? "won" : "lost";
   const pointsText = Math.abs(amount) !== 1 ? "points" : "point";
-  const payload = `You have ${whatHappened} ${Math.abs(
+  const payload = `Alice has ${whatHappened} ${Math.abs(
     amount
   )} ${attribute} ${pointsText}.`;
 

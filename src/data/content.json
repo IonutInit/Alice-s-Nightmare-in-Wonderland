@@ -21,6 +21,16 @@
         ],
         "test": "agility"
     },
+    "7": {
+        "content": "Alice looks at the picture she managed to take from the wall. It appears to be a rather ugly portrait of an even uglier woman. She is sitting on a stool, beside the range in a smoky kitchen, holding a baby wrapped in a shawl. Alice can’t shake the feeling that she should know who the woman and the baby in the picture are.\nAs she continues to tumble down the well she passes through pools of light cast by lamps and lanterns that hang from its walls. It is as she passes through one of these pools of light that she sees the image in front of her change before her very eyes.\nThe screaming baby’s features melt and morph until Alice is no longer looking at a human child but a squealing piglet. Shocked by the unnatural metamorphosis, Alice hurls the picture at the wall, where it snags on a nail, tearing the canvas.",
+        "options": [
+            [82]
+        ],
+        "event": [{
+            "name": "insanity",
+            "change": 1
+        }]
+    },
      "12" : {
         "content": "As the dresser disappears again above her, Alice reaches a section of the well shaft adorned with framed maps and pictures hanging from hooks.",
         "options": [
@@ -180,6 +190,13 @@
         ],
         "inventory": "marmalade jar"
     },
+    "189" : {
+        "content": "“If you’re run by clockwork,” Alice says, observing the Tick-Tock Men through narrowed eyes, “you must need someone to wind you up, to make sure that you keep time, but I don’t see a key anywhere.”\n The mechanical men hesitate at this, and look at each other, before resuming their advance. But as they do so their movements begin to slow, as does the ticking of their mechanical hearts. Beat by beat, step by step, the Tick-Tock Men finally come to a shuddering halt, leaning forward at the waist, their talon-hands hanging uselessly at their sides.",
+        "options": [
+            [314]
+        ],
+        "sample_end": true
+    },
      "191" : {
         "content": "Alice is brought to her senses again as she lands with a soft thud atop a pile of dry leaves. Lying on her back among the leaves, she finds herself staring up at what appears to be a circular well shaft.\n She feels like she barely has her wits about her; the blow to the head she received was clearly much worse than she first thought and had left her feeling quite dizzy.",
         "options": [
@@ -217,9 +234,12 @@
         "sample_end": true
     },
     "314" : {
-        "content": "The mechanical killers dealt with, Alice starts to explore the Hall of Doors.\n ...",
+        "content": "The mechanical killers dealt with, Alice starts to explore the Hall of Doors. There are tall doors and small doors, some with golden handles, others half-hidden behind drapes, but they all have one thing in common; they are all locked.\n The child can’t help feeling that she has found herself in a situation very similar to this once before, but she can’t quite remember when. It is as she is struggling to recover the memory, lost in her ruminations, that she notices the three-legged table standing in the middle of the hall. It is made of solid glass which must be why she didn’t see it before now.\n On top of the table are two objects, a tiny golden key and a bottle. The key appears far too small to open any of the doors around the hall. The bottle, on the other hand, is much more interesting. It is full of a strangely fluorescing liquid that changes colour before Alice’s very eyes; one moment it’s cherry-red, then next a custard yellow. A label tied round the bottle’s neck reads ‘DRINK ME’.\n It is as Alice is studying the objects on top of the table that she spies something through the glass, sitting on the floor beneath it. It is a little glass box.\n What should Alice do now?",
         "options": [
-            [329]
+            [329, "Take the tiny golden key"],
+            [387, "Drink the contents of the bottle"],
+            [3, "Open the glass box"],
+            [339, "Keep trying the doors around the hall"]
         ],
         "sample_end": true
     }
