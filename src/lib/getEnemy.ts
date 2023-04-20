@@ -15,7 +15,7 @@ function getEnemy(enemy: Combat, dispatch: Dispatch<Action>) {
       },
     });
     dispatch({
-      type: "toogle_combat_mode",
+      type: "toggle_combat_mode",
       payload: true,
     });
     dispatch({

@@ -78,7 +78,7 @@ export default function reducer(state: GameState, action: Action): GameState {
       }
     }
     // eslint-disable-next-line no-fallthrough
-    case "toogle_combat_mode":
+    case "toggle_combat_mode":
       return {
         ...state,
         combatMode: action.payload as boolean,

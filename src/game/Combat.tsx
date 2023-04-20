@@ -51,9 +51,8 @@ function Combat() {
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-center py-2 border-t-2 border-b-2 border-gray-500 mb-6">
+      <div className="flex gap-4 justify-center items-center py-2 border-t-2 border-b-2 border-gray-300 mb-6">
         <p>{name}</p>
-        <div className="h-[2px] w-2/3 bg-slate-400 my-2" />
         <p>
           Combat:{"  "}
           <span
@@ -83,7 +82,7 @@ function Combat() {
       </div>
 
       {gameLog.length !== 0 && (
-        <div className="flex flex-col justify-center items-center py-2 border-t-2 border-b-2 border-gray-500 mb-6 text-sm mt-5">
+        <div className="flex flex-col justify-center items-center py-2 border-2 border-b-gray-400 border-t-gray-300 mb-6 text-sm mt-5">
           {gameLog.map((log, index) => {
             // eslint-disable-next-line react/no-array-index-key
             return <p key={index}>{log}</p>;

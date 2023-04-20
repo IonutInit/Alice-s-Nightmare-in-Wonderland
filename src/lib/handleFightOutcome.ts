@@ -9,7 +9,7 @@ export function handleWin(
 ) {
   if (endurance <= 0) {
     dispatch({
-      type: "toogle_combat_mode",
+      type: "toggle_combat_mode",
       payload: false,
     });
     dispatch({

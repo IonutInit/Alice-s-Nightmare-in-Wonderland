@@ -13,7 +13,7 @@ function ChapterContent() {
   } = useContext(GameContext);
 
   return (
-    <div className="pt-[30px] h-[500px] overflow-scroll">
+    <div className="pt-[30px] h-[400px] overflow-scroll">
       {content[chapter].content
         .split("\n")
         .map((line: string, index: number) => (
