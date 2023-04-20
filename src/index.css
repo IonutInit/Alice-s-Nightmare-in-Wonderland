@@ -5,3 +5,11 @@
 .overflow-scroll::-webkit-scrollbar {
   display: none;
 }
+
+.icons:hover {
+    transform: translateY(-3px);
+}
+
+.icons:not(:hover) {
+    transition: 0.1s;
+}

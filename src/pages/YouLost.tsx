@@ -6,9 +6,11 @@ function YouLost() {
   const { dispatch } = useGameContext();
 
   return (
-    <div className="flex-container">
-      <p className="text-4xl pb-4">Game Over</p>
-      <p className="text-xl">Alice suddlenly woke up!</p>
+    <div className="flex flex-col items-center">
+      <h1 className="text-4xl pb-4">Game Over</h1>
+
+      <p className="text-xl mb-4">Alice suddlenly woke up!</p>
+
       <OptionsButton
         onClick={() => {
           dispatch({

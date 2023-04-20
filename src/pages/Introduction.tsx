@@ -4,6 +4,7 @@ import useGameContext from "../context/useGameContext";
 
 import OptionsButton from "../components/OptionsButton";
 import Accordion from "../components/Accordion";
+import CurrentInventory from "../components/CurrentInventory";
 import Underline from "../components/Underline";
 
 import extraContent from "../data/extraContent.json";
@@ -22,7 +23,7 @@ function Instructions() {
 }
 
 function Introduction() {
-  const { dispatch } = useGameContext();
+  const { state, dispatch } = useGameContext();
   return (
     <div>
       <h1 className="text-4xl text-center py-5">Welcome to Wonderland</h1>
@@ -33,20 +34,24 @@ function Introduction() {
       </h3>
       <div>{parse(extraContent.intro[0].content)}</div>
 
+      {state.inventory.length !== 0 && <CurrentInventory />}
+
       <br />
       <Instructions />
       <br />
 
       <div className="flex flex-col items-center">
-        <OptionsButton
-          onClick={() => {
-            dispatch({
-              type: "activate_attributes",
-            });
-          }}
-        >
-          NEXT
-        </OptionsButton>
+        {state.chapter === 0 && (
+          <OptionsButton
+            onClick={() => {
+              dispatch({
+                type: "activate_attributes",
+              });
+            }}
+          >
+            NEXT
+          </OptionsButton>
+        )}
       </div>
     </div>
   );

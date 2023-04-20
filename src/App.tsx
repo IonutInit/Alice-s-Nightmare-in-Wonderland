@@ -5,6 +5,7 @@ import Introduction from "./pages/Introduction";
 import Attributes from "./pages/Attributes";
 import Game from "./pages/Game";
 import YouLost from "./pages/YouLost";
+import Footer from "./footer/Footer";
 
 import reducer from "./context/Reducer";
 
@@ -24,6 +25,7 @@ function App() {
           {state.gameState === 4 && <YouLost />}
         </div>
       </div>
+      <Footer />
     </GameContextProvider>
   );
 }
