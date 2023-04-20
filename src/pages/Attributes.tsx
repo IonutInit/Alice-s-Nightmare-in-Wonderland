@@ -27,7 +27,8 @@ function Attributes() {
 
   return (
     <div className="flex flex-col items-center pt-10">
-      <h1 className="text-3xl pb-10">SET ATTRIBUTES</h1>
+      <h1 className="text-3xl pb-5">SET ATTRIBUTES</h1>
+      <div className="h-1 w-full bg-slate-600 mb-10" />
       <div className="items-left">
         {attributes.map(([attribute, value]) => (
           <div key={attribute} className="flex">
@@ -57,7 +58,7 @@ function Attributes() {
 
       <p className="text-xl py-3 flex items-center">
         <span className="mr-2">Points remaining:</span>
-        <span className="inline-flex w-[55px] h-[55px] rounded-full bg-slate-600 text-white items-center justify-center text-3xl font-bold">
+        <span className="inline-flex w-[55px] h-[55px] rounded-full bg-slate-700 text-white items-center justify-center text-3xl font-bold">
           {points}
         </span>
       </p>
