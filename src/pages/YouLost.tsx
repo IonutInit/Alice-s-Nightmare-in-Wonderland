@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import { GameContext } from "../context/GameContext";
+import useGameContext from "../context/useGameContext";
 
 import OptionsButton from "../components/OptionsButton";
 
 function YouLost() {
-  const { dispatch } = useContext(GameContext);
+  const { dispatch } = useGameContext();
 
   return (
     <div className="flex-container">

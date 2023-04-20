@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import { GameContext } from "../context/GameContext";
+import useGameContext from "../context/useGameContext";
 
 import OptionsButton from "../components/OptionsButton";
 
 function EndOfSample() {
-  const { dispatch } = useContext(GameContext);
+  const { dispatch } = useGameContext();
 
   return (
     <div className="flex flex-col justify-center items-center">

@@ -1,5 +1,5 @@
-import { useEffect, useContext } from "react";
-import { GameContext } from "../context/GameContext";
+import { useEffect } from "react";
+import useGameContext from "../context/useGameContext";
 
 import Console from "../game/Console";
 import ChapterContent from "../game/ChapterContent";
@@ -20,7 +20,7 @@ import { Content } from "../../types";
 const content: Content = importedContent as Content;
 
 function Game() {
-  const { state, dispatch } = useContext(GameContext);
+  const { state, dispatch } = useGameContext();
   const chapter = content[state.chapter];
 
   useEffect(() => {

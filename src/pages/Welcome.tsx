@@ -1,7 +1,6 @@
-import { useContext } from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import parse from "html-react-parser";
-import { GameContext } from "../context/GameContext";
+import useGameContext from "../context/useGameContext";
 
 import cover from "../assets/cover.jpg";
 import { welcome, welcome_disclaimer } from "../data/extraContent.json";
@@ -9,7 +8,7 @@ import { welcome, welcome_disclaimer } from "../data/extraContent.json";
 import OptionsButton from "../components/OptionsButton";
 
 function Welcome() {
-  const { dispatch } = useContext(GameContext);
+  const { dispatch } = useGameContext();
 
   return (
     <div>

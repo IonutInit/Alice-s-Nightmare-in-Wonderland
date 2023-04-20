@@ -1,7 +1,7 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import parse from "html-react-parser";
-import { GameContext } from "../context/GameContext";
+import useGameContext from "../context/useGameContext";
 
 import RoundedButton from "../components/RoundedButton";
 import OptionsButton from "../components/OptionsButton";
@@ -9,7 +9,7 @@ import OptionsButton from "../components/OptionsButton";
 import extraContent from "../data/extraContent.json";
 
 function Attributes() {
-  const { state, dispatch } = useContext(GameContext);
+  const { state, dispatch } = useGameContext();
   const { agility, logic, combat, endurance } = state.alice;
   const [initialValue] = useState(state.alice);
   const attributes = Object.entries({ agility, logic, combat, endurance });

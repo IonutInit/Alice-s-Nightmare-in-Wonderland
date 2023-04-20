@@ -1,7 +1,6 @@
-import { useContext } from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import parse from "html-react-parser";
-import { GameContext } from "../context/GameContext";
+import useGameContext from "../context/useGameContext";
 
 import OptionsButton from "../components/OptionsButton";
 import Accordion from "../components/Accordion";
@@ -22,7 +21,7 @@ function Instructions() {
 }
 
 function Introduction() {
-  const { dispatch } = useContext(GameContext);
+  const { dispatch } = useGameContext();
   return (
     <div>
       <h1 className="text-4xl text-center py-5">Welcome to Wonderland</h1>

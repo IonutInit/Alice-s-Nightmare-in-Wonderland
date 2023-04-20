@@ -1,5 +1,5 @@
-import { useState, useContext } from "react";
-import { GameContext } from "../context/GameContext";
+import { useState } from "react";
+import useGameContext from "../context/useGameContext";
 
 import OptionsButton from "../components/OptionsButton";
 
@@ -14,7 +14,7 @@ import { Content, Attribute } from "../../types";
 const content: Content = importedContent;
 
 function Test() {
-  const { state, dispatch } = useContext(GameContext);
+  const { state, dispatch } = useGameContext();
 
   const [testTaken, setTestTaken] = useState({
     isTaken: false,

@@ -1,5 +1,5 @@
-import { useEffect, useContext } from "react";
-import { GameContext } from "../context/GameContext";
+import { useEffect } from "react";
+import useGameContext from "../context/useGameContext";
 
 import OptionsButton from "../components/OptionsButton";
 
@@ -11,7 +11,7 @@ import customButtonMessage from "../lib/customButtonMessage";
 import { Content } from "../../types";
 
 const SimpleOption = () => {
-  const { state, dispatch } = useContext(GameContext);
+  const { state, dispatch } = useGameContext();
 
   const typedContent: Content = content;
 
