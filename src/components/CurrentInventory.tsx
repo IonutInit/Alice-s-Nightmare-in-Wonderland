@@ -15,7 +15,7 @@ function CurrentInventory() {
   return (
     <div className="border border-gray-400 mt-5 p-5">
       <br />
-      <h3 className="text-3xl pb-1">Inventory</h3>
+      <h3 className="text-2xl pb-1">Inventory used this game</h3>
 
       {state.inventory.map((item) => {
         if (uniqueItems.has(item.name)) {

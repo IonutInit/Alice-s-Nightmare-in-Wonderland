@@ -1,3 +1,5 @@
+import handleInventoryUses from "../lib/handleInventoryUses";
+
 import { Props } from "../../types";
 
 function InventoryConsole({ state, dispatch }: Props) {
@@ -8,23 +10,6 @@ function InventoryConsole({ state, dispatch }: Props) {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     uses !== undefined ? (useCount = `x${uses}`) : (useCount = "");
     return `${name} ${useCount}`;
-  };
-
-  const handleItemUses = (
-    uses: number,
-    name: string,
-    event: { name: string; change: number }[]
-  ) => {
-    if (uses !== undefined) {
-      dispatch({
-        type: "modify_attribute",
-        payload: { attribute: event[0].name, amount: event[0].change },
-      });
-    }
-    dispatch({
-      type: "use_item",
-      payload: name,
-    });
   };
 
   return (
@@ -41,7 +26,14 @@ function InventoryConsole({ state, dispatch }: Props) {
                   (item.uses !== undefined && combatMode)
                 }
                 key={item.id}
-                onClick={() => handleItemUses(item.uses!, item.id, item.event!)}
+                onClick={() =>
+                  handleInventoryUses(
+                    item.uses!,
+                    item.id,
+                    item.event!,
+                    dispatch
+                  )
+                }
               >
                 {itemDisplay(item.name, item.uses)}
               </button>
