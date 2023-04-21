@@ -17,7 +17,7 @@ function App() {
   return (
     <GameContextProvider state={state} dispatch={dispatch}>
       <div className="min-h-screen min-w-[800px] flex justify-center bg-gray-400">
-        <div className="w-2/3 bg-gray-200 px-20 pt-10 pb-20">
+        <div className="w-2/3 md:w-3/4 min-w-[600px] bg-gray-200 px-20 pt-10 pb-20">
           {state.gameState === 0 && <Welcome />}
           {state.gameState === 1 && <Introduction />}
           {state.gameState === 2 && <Attributes />}

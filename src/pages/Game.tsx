@@ -34,7 +34,7 @@ function Game() {
   const caseForCombat = state.combatMode;
 
   return (
-    <div>
+    <div className="flex flex-col">
       <Console />
 
       <ChapterContent />
