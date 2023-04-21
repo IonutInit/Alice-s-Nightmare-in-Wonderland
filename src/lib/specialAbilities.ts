@@ -1,8 +1,8 @@
-import { Alice } from "../../types";
+import { AliceInState } from "../../types";
 
 function disableSpecialAbilityButton(
   option: (string | number)[],
-  currentState: Alice
+  currentState: AliceInState
 ) {
   const checkForAbility = option[2];
   if (!checkForAbility) {

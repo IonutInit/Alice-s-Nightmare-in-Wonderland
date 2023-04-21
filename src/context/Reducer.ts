@@ -1,6 +1,6 @@
 import handleHit from "../lib/handleTakeHit";
 
-import { GameState, Action, Inventory } from "../../types";
+import { GameState, Action, InventoryInState } from "../../types";
 
 import gameData from "../data/gameData";
 
@@ -35,7 +35,7 @@ export default function reducer(state: GameState, action: Action): GameState {
     case "add_to_inventory":
       return {
         ...state,
-        inventory: [...state.inventory, action.payload] as Inventory,
+        inventory: [...state.inventory, action.payload] as InventoryInState,
       };
     case "update_log":
       return {

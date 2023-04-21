@@ -2,7 +2,7 @@ import { Dispatch } from "react";
 
 import { rollDie, sumDie } from "./rollDie";
 
-import { Action, Inventory } from "../../types";
+import { Action, InventoryInState } from "../../types";
 
 type FightResult = [
   currentInitiative: string,
@@ -15,7 +15,7 @@ type FightResult = [
 
 function fight(
   aliceCombatStats: number,
-  aliceInventory: Inventory,
+  aliceInventory: InventoryInState,
   enemyCombatStats: number,
   enemyName: string,
   startingInitiative: number,

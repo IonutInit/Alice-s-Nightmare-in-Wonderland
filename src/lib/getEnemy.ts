@@ -1,11 +1,9 @@
 import { Dispatch } from "react";
-import { Action } from "../../types";
+import { Action, EnemyInContent } from "../../types";
 
 // structure of enemy is: ["name", initiative, combat, endurance, ?numberOfEnemies]
 
-type EnemyType = [string, number, number, number, number | undefined];
-
-function handleNumberOfEnemies(enemy: EnemyType) {
+function handleNumberOfEnemies(enemy: EnemyInContent) {
   const mutipleEnemyEndurance = [];
   const enemies = Number(enemy[4]);
   if (enemies !== undefined) {
@@ -18,7 +16,7 @@ function handleNumberOfEnemies(enemy: EnemyType) {
   return mutipleEnemyEndurance;
 }
 
-function getEnemy(enemy: EnemyType, dispatch: Dispatch<Action>) {
+function getEnemy(enemy: EnemyInContent, dispatch: Dispatch<Action>) {
   if (enemy !== undefined) {
     dispatch({
       type: "get_enemy",

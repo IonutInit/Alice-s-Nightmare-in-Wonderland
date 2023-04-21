@@ -1,6 +1,6 @@
 export type StringNumberArray = (string | number)[];
 
-export type Alice = {
+export type AliceInState = {
   [key: string]: number;
   agility: number;
   logic: number;
@@ -9,16 +9,6 @@ export type Alice = {
   endurance: number;
   curioser: number;
   thePen: number;
-};
-
-type Log = string[];
-
-export type Enemy = {
-  [key: number]: number;
-  name: string;
-  combat: number;
-  endurance: any;
-  initiative: number;
 };
 
 export type InventoryItem = {
@@ -30,17 +20,31 @@ export type InventoryItem = {
   value?: number;
 };
 
-export type Inventory = InventoryItem[];
+export type InventoryInState = InventoryItem[];
+
+type LogInState = string[];
+
+export type EnemyInState = {
+  [key: number]: number;
+  name: string;
+  combat: number;
+  endurance: number[];
+  initiative: number;
+};
 
 export type GameState = {
   gameState: number;
   chapter: number;
-  alice: Alice;
-  inventory: Inventory;
-  log: Log;
+  alice: AliceInState;
+  inventory: InventoryInState;
+  log: LogInState;
   combatMode: boolean;
-  enemy: Enemy;
+  enemy: EnemyInState;
   options?: (number | string)[]; // added to satisfy output type of reducer
+};
+
+export type State = {
+  state: GameState;
 };
 
 export type Action =
@@ -91,16 +95,16 @@ export type Dispatch = {
   dispatch: (action: Action) => void;
 };
 
-export type State = {
-  state: GameState;
-};
-
 export type Props = {
   state: GameState;
   dispatch: (action: Action) => void;
 };
 
 export type Event = { name: string; change: number }[] | undefined;
+
+export type EnemyInContent =
+  | [string, number, number, number, number | undefined]
+  | StringNumberArray;
 
 export type Content = {
   [key: string]: {
@@ -111,7 +115,7 @@ export type Content = {
     event?: Event;
     inventory?: string;
     sample_end?: boolean;
-    combat?: any;
+    combat?: EnemyInContent;
   };
 };
 
