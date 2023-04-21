@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
 
-import { State } from "../../types";
+import useGameContext from "../context/useGameContext";
 
-function LogConsole({ state }: State) {
+function LogConsole() {
+  const { state } = useGameContext();
+
   const logRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

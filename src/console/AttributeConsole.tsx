@@ -1,8 +1,10 @@
+import useGameContext from "../context/useGameContext";
+
 import { capitalize, describeSpecialAbility } from "../lib/textFunctions";
 
-import { State } from "../../types";
+function AttributeConsole() {
+  const { state } = useGameContext();
 
-function AttributeConsole({ state }: State) {
   const attributes = Object.entries(state.alice).map(([key, value]) => [
     capitalize(key),
     value,

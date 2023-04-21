@@ -1,9 +1,12 @@
+import useGameContext from "../context/useGameContext";
+
 import handleInventoryUses from "../lib/handleInventoryUses";
 
-import { Props } from "../../types";
-
-function InventoryConsole({ state, dispatch }: Props) {
-  const { inventory, combatMode } = state;
+function InventoryConsole() {
+  const {
+    state: { inventory, combatMode },
+    dispatch,
+  } = useGameContext();
 
   const itemDisplay = (name: string, uses?: number) => {
     let useCount = "";
@@ -28,6 +31,7 @@ function InventoryConsole({ state, dispatch }: Props) {
                 key={item.id}
                 onClick={() =>
                   handleInventoryUses(
+                    item.name,
                     item.uses!,
                     item.id,
                     item.event!,

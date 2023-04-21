@@ -3,8 +3,9 @@ import { Dispatch } from "react";
 import { Action } from "../../types";
 
 const handleInventoryUses = (
-  uses: number,
   name: string,
+  uses: number,
+  id: string,
   event: { name: string; change: number }[],
   dispatch: Dispatch<Action>
 ) => {
@@ -16,11 +17,13 @@ const handleInventoryUses = (
   }
   dispatch({
     type: "use_item",
-    payload: name,
+    payload: id,
   });
   dispatch({
     type: "update_log",
-    payload: `item has been used`,
+    payload: `Alice used ${name.toLowerCase()}. She gained ${event[0].change} ${
+      event[0].name
+    } points.`,
   });
 };
 
