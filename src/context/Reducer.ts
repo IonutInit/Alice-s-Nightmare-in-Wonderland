@@ -1,4 +1,7 @@
+import handleHit from "../lib/handleTakeHit";
+
 import { GameState, Action, Inventory } from "../../types";
+
 import gameData from "../data/gameData";
 
 export default function reducer(state: GameState, action: Action): GameState {
@@ -45,37 +48,7 @@ export default function reducer(state: GameState, action: Action): GameState {
         enemy: action.payload,
       };
     case "take_hit": {
-      if (action.payload === 1) {
-        return {
-          ...state,
-          enemy: {
-            ...state.enemy,
-            endurance: state.enemy.endurance - 2,
-          },
-        };
-      }
-      if (action.payload === 0) {
-        return {
-          ...state,
-          enemy: {
-            ...state.enemy,
-            endurance: state.enemy.endurance - 1,
-          },
-          alice: {
-            ...state.alice,
-            endurance: state.alice.endurance - 1,
-          },
-        };
-      }
-      if (action.payload === -1) {
-        return {
-          ...state,
-          alice: {
-            ...state.alice,
-            endurance: state.alice.endurance - 2,
-          },
-        };
-      }
+      return handleHit(state, action.payload, 0);
     }
     // eslint-disable-next-line no-fallthrough
     case "toggle_combat_mode":

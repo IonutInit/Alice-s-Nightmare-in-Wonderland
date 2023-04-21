@@ -17,7 +17,7 @@ export type Enemy = {
   [key: number]: number;
   name: string;
   combat: number;
-  endurance: number;
+  endurance: any;
   initiative: number;
 };
 
@@ -69,7 +69,7 @@ export type Action =
       payload: {
         name: string;
         combat: number;
-        endurance: number;
+        endurance: number[];
         initiative: number;
       };
     }
@@ -102,8 +102,6 @@ export type Props = {
 
 export type Event = { name: string; change: number }[] | undefined;
 
-export type Combat = (string | number)[];
-
 export type Content = {
   [key: string]: {
     title?: string;
@@ -113,7 +111,7 @@ export type Content = {
     event?: Event;
     inventory?: string;
     sample_end?: boolean;
-    combat?: Combat;
+    combat?: any;
   };
 };
 

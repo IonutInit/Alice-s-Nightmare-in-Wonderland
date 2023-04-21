@@ -63,11 +63,15 @@ function Combat() {
         </p>
         <p>
           Endurance:{"  "}
-          <span
-            className={`inline-flex w-[25px] h-[25px] rounded-full ${attributeStyle} text-white items-center justify-center`}
-          >
-            {endurance}
-          </span>
+          {endurance.map((enduranceSlot: number, index: number) => (
+            <span
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
+              className={`inline-flex w-[25px] h-[25px] rounded-full ${attributeStyle} text-white items-center justify-center mx-1`}
+            >
+              {enduranceSlot}
+            </span>
+          ))}
         </p>
       </div>
 

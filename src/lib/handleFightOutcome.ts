@@ -4,10 +4,10 @@ import { Action } from "../../types";
 
 export function handleWin(
   name: string,
-  endurance: number,
+  endurance: number[],
   dispatch: Dispatch<Action>
 ) {
-  if (endurance <= 0) {
+  if (!endurance.length) {
     dispatch({
       type: "toggle_combat_mode",
       payload: false,
