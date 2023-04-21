@@ -1,24 +1,9 @@
-import useGameContext from "../context/useGameContext";
-
-import { capitalize, describeSpecialAbility } from "../lib/textFunctions";
+import AttributeDisplay from "../components/AttributeDisplay";
 
 function AttributeConsole() {
-  const { state } = useGameContext();
-
-  const attributes = Object.entries(state.alice).map(([key, value]) => [
-    capitalize(key),
-    value,
-  ]);
-
   return (
-    <div className="flex flex-wrap justify-end pb-3">
-      {attributes.map(([key, value]) => {
-        return (
-          <p className="w-1/3 text-sm" key={key}>
-            {describeSpecialAbility(key.toString())}: {value}
-          </p>
-        );
-      })}
+    <div className="flex gap-10 justify-between pb-3 px-10">
+      <AttributeDisplay showIcons showStats showTooltip />
     </div>
   );
 }

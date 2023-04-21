@@ -30,10 +30,9 @@ function Attributes() {
     <div className="flex flex-col items-center pt-10">
       <h1 className="text-3xl pb-5">SET ATTRIBUTES</h1>
       <Underline />
-      {/* <div className="h-1 w-full bg-slate-600 mb-10" /> */}
       <div className="items-left">
         {attributes.map(([attribute, value]) => (
-          <div key={attribute} className="flex">
+          <div key={attribute} className="flex items-baseline">
             <RoundedButton
               onClick={() => modifyAttribute(attribute, 1)}
               disabled={
