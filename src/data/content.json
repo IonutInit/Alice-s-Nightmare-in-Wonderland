@@ -29,7 +29,9 @@
         "event": [{
             "name": "insanity",
             "change": 1
-        }]
+        }],
+        "test": "attribute_to_test",
+        "inventory": "item"
     },
      "12" : {
         "content": "As the dresser disappears again above her, Alice reaches a section of the well shaft adorned with framed maps and pictures hanging from hooks.",
