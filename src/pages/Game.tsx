@@ -9,15 +9,11 @@ import Combat from "../game/Combat";
 import EndOfSample from "../options/EndOfSample";
 import Divider from "../components/Divider";
 
-import importedContent from "../data/content.json";
-
 import handleEvent from "../lib/handleEvent";
 import handleInventory from "../lib/handleInventory";
 import getEnemy from "../lib/getEnemy";
 
-import { Content } from "../../types";
-
-const content: Content = importedContent as Content;
+import content from "../lib/typedContent";
 
 function Game() {
   const { state, dispatch } = useGameContext();

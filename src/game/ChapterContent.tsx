@@ -1,11 +1,7 @@
 import React from "react";
 import useGameContext from "../context/useGameContext";
 
-import importedContent from "../data/content.json";
-
-import { Content } from "../../types";
-
-const content: Content = importedContent;
+import content from "../lib/typedContent";
 
 function ChapterContent() {
   const {

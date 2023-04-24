@@ -3,17 +3,13 @@ import useGameContext from "../context/useGameContext";
 
 import OptionsButton from "../components/OptionsButton";
 
-import content from "../data/content.json";
-
 import disableSpecialAbilityButton from "../lib/specialAbilities";
 import customButtonMessage from "../lib/customButtonMessage";
 
-import { Content } from "../../types";
+import content from "../lib/typedContent";
 
 const SimpleOption = () => {
   const { state, dispatch } = useGameContext();
-
-  const typedContent: Content = content;
 
   function handleClick(newChapter: number, specialAbility?: string) {
     if (specialAbility !== undefined) {
@@ -36,7 +32,7 @@ const SimpleOption = () => {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      {typedContent[state.chapter].options.map((option) => (
+      {content[state.chapter].options.map((option) => (
         <OptionsButton
           key={option[0]}
           disabled={disableSpecialAbilityButton(option, state.alice)}

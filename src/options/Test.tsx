@@ -3,15 +3,13 @@ import useGameContext from "../context/useGameContext";
 
 import OptionsButton from "../components/OptionsButton";
 
-import importedContent from "../data/content.json";
-
 import { spellArticle } from "../lib/textFunctions";
 import handleTest from "../lib/handleTest";
 import { carryOn, carryOnTextDisplay } from "../lib/carryOn";
 
-import { Content, Attribute } from "../../types";
+import content from "../lib/typedContent";
 
-const content: Content = importedContent;
+import { Attribute } from "../../types";
 
 function Test() {
   const { state, dispatch } = useGameContext();

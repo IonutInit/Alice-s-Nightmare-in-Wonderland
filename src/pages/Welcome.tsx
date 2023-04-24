@@ -17,7 +17,7 @@ function Welcome() {
         <h1 className="text-4xl pb-5">ALICE&apos;S NIGHTMARE IN WONDERLAND</h1>
         <Underline />
         <img src={cover} alt="book cover" />
-        <p className="p-5 text-sm italic">{welcome_disclaimer}</p>
+        <p className="p-5 text-sm italic">{parse(welcome_disclaimer)}</p>
       </div>
 
       <div>{parse(welcome)}</div>

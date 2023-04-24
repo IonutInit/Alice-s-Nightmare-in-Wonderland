@@ -6,11 +6,7 @@ import useGameContext from "../context/useGameContext";
 import githubLogo from "../assets/github.svg";
 import info from "../assets/info.svg";
 
-import importedContent from "../data/content.json";
-
-import { Content } from "../../types";
-
-const content: Content = importedContent;
+import content from "../lib/typedContent";
 
 function Footer() {
   const { state, dispatch } = useGameContext();
